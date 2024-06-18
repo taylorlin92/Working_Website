@@ -6,18 +6,20 @@
 }
 
 body {
+    width: 100vw;
     font-family: 'Impact', fantasy; /* 設定全局字體 */
     background-color: #f4f4f4; /* 設定背景顏色 */
     color: #333; /* 設定文字顏色 */
-    height: 2000px; /* 設置高度以測試滾動效果 */
     display: flex; /* 使用flex佈局 */
     flex-direction: column; /* 垂直排列子元素 */
     min-height: 100vh; /* 保證頁面高度至少為視窗高度 */
 }
+
 .main-content {
     flex: 1; /* 使主內容區域擴展以填滿剩餘空間 */
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /*
@@ -25,7 +27,6 @@ body {
 NAVBAR
 ====================
 */
-/* 頁首和導航欄樣式 */
 header {
     position: fixed; /* 固定位置，讓導航欄在滾動時保持在頂部 */
     width: 100%; /* 設定寬度為100% */
@@ -48,7 +49,6 @@ header.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 滾動後加強陰影效果 */
     animation: shadowPulse 0.5s ease; /* 添加殘影動畫 */
 }
-
 
 /* 殘影動畫效果 */
 @keyframes shadowPulse {
@@ -94,7 +94,6 @@ header.scrolled .logo img {
     visibility: visible; /* 設置為可見 */
 }
 
-
 .navbar ul {
     display: flex; /* 使用彈性佈局 */
     list-style: none; /* 移除列表的預設樣式 */
@@ -110,47 +109,6 @@ header.scrolled .logo img {
     font-size: 18px; /* 設定連結文字大小 */
     transition: color 0.5s ease; /* 添加顏色變化的過渡效果，時間為0.5秒 */
 }
-
-.navbar .dropdown-menu {
-    background: white;
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-    border: 0;
-    display: inherit;
-    opacity: 0;
-    min-width: 9rem;
-    margin-top: 20px;
-    padding: 13px 0 10px 0;
-    transition: all 0.3s;
-    pointer-events: none;
-  }
-
-  .navbar .dropdown-menu::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 15px solid white;
-    position: absolute;
-    top: -10px;
-    left: 10px;
-  }
-  
-  .navbar .dropdown-item {
-    display: inline-block;
-    color: black;
-    font-size: 16px;
-    position: relative;
-  }
-  
-  .navbar .dropdown-item.active, 
-  .navbar .dropdown-item:active,
-  .navbar .dropdown-item:focus, 
-  .navbar .dropdown-item:hover {
-    background: transparent;
-    color: #7DB9DE; /* 懸停時連結顏色變為 #1E88A8 */;
-  }
-  
 
 .burger {
     display: none; /* 預設隱藏漢堡圖示 */
@@ -199,6 +157,94 @@ header.scrolled .burger div {
     background-color: #7DB9DE; /* 懸停時漢堡圖示的線條顏色變為 #1E88A8 */
 }
 
+/* Dropdown Menu */
+.navbar-links .nav-link {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+ 
+.navbar-links .nav-link:hover {
+    color: #7DB9DE;
+}
+  
+.navbar .dropdown-menu {
+    background: white;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    border: 0;
+    display: inherit;
+    opacity: 0;
+    min-width: 9rem;
+    margin-top: 20px;
+    padding: 13px 0 10px 0;
+    transition: all 0.3s;
+    pointer-events: auto;
+    top: 45px;
+}
+  
+.navbar .dropdown-menu::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 15px solid white;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+  
+.navbar .dropdown-item {
+    display: inline-block;
+    color: black;
+    font-size: 18px;
+    position: relative;
+}
+  
+.navbar .dropdown-item.active, 
+.navbar .dropdown-item:active,
+.navbar .dropdown-item:focus, 
+.navbar .dropdown-item:hover {
+    background: transparent;
+    color: #7DB9DE;
+}
+  
+@media screen and (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      margin-top: 0;
+      pointer-events: auto; 
+    }
+}
+  
+@media screen and (max-width: 992px) {
+    .navbar .dropdown-menu {
+      display: none;
+    }
+  
+    .navbar .dropdown-menu::before {
+      display: none;
+    }
+  
+    .navbar .dropdown:hover .dropdown-menu {
+      display: block; /* 當滑鼠懸停時顯示dropdown menu */
+    }
+  
+    .navbar .dropdown:hover .dropdown-menu a {
+      color: white;
+    }
+  
+    .navbar .dropdown:hover .dropdown-menu {
+      background: none;
+      opacity: 1; /* 確保可見 */
+      pointer-events: auto; /* 確保可點擊 */
+      margin-top: 0;
+    }
+}
+
 /* 響應式設計 */
 @media (max-width: 1024px) {
     .navbar ul {
@@ -235,44 +281,6 @@ header.scrolled .burger div {
         justify-content: center; /* 水平居中對齊 */
     }
 }
-
-@media screen and (min-width: 992px) {
-    .navbar .dropdown:hover .dropdown-menu {
-      opacity: 1;
-      margin-top: 0;
-      pointer-events: auto; 
-    }
-  }
-  
-  @media screen and (max-width: 992px) {
-    .navbar .dropdown-menu {
-        display: none;
-        position: static;
-      }
-  
-    .navbar .dropdown-menu::before {
-      display: none;
-    }
-  
-    .navbar .dropdown:hover .dropdown-menu {
-      display: block; /* 當滑鼠懸停時顯示dropdown menu */
-      position: absolute; /* 绝对定位 */
-      left: 0; /* 确保位置对齐 */
-      top: 100%; /* 确保位置在父元素下面 */
-    z-index: 1000; /* 确保在其他内容之上 */
-    }
-  
-    .navbar .dropdown:hover .dropdown-menu a {
-      color: white;
-    }
-  
-    .navbar .dropdown:hover .dropdown-menu {
-        background: none;
-        opacity: 1; /* 確保可見 */
-        pointer-events: auto; /* 確保可點擊 */
-        margin-top: 0;
-    }
-  }
 
 /* 動畫效果 */
 @keyframes navLinkFade {
@@ -475,6 +483,8 @@ Next Section
 ====================
 */
 .next-section {
+    background-color: white;
+    height: 100vh;
     padding: 50px 20px;
     text-align: center;
     flex: 1;
@@ -482,13 +492,14 @@ Next Section
 
 .next-section h1 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-top: 3rem;
+    margin-bottom: 30px;
 }
 
 .filter-menu {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .filter-menu button {
@@ -500,6 +511,10 @@ Next Section
     border-radius: 25px;
 }
 
+.filter-menu {
+    margin-bottom: 50px;
+}
+
 .filter-menu .active {
     background-color: #ADD8E6;
 }
@@ -509,7 +524,7 @@ Next Section
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    max-height: 100%;
+    max-height: auto;
     overflow: hidden;
 }
 
@@ -604,6 +619,15 @@ Next Section
 
 /* 響應式設計 */
 @media (max-width: 768px) {
+    .main-section{
+        width: 100%;
+    }
+    .next-section{
+        width: 100%;
+    }
+    .footer{
+        width: 100%;
+    }
     .next-section h1 {
         font-size: 2em;
     }
@@ -614,6 +638,7 @@ Next Section
     }
 
     .grid_container {
+        height: auto;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
     }
@@ -650,7 +675,7 @@ Footer
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
+    z-index: 999;
 }
 
 .footer-content {
@@ -697,7 +722,7 @@ Footer
 }
 
 .footer-center img {
-    width: 500px;
+    width: 400px;
     margin-bottom: 10px;
 }
 
@@ -719,15 +744,12 @@ Footer
     text-decoration: none;
 }
 
-.footer-links a:hover{
+.footer-links a:hover {
     padding: 2px;
     color: #7DB9DE;
-
-    
 }
 
-.footer-right h3 {
-    
+.footer-right h1 {
     margin-bottom: 10px;
 }
 
@@ -747,12 +769,9 @@ Footer
     }
 }
 
-.icon-phone::before {
-    content: url('path-to-phone-icon.png'); /* 替換為電話圖標的URL */
-    margin-right: 5px;
-}
 
-.icon-email::before {
-    content: url('path-to-email-icon.png'); /* 替換為郵件圖標的URL */
-    margin-right: 5px;
+.footer_icons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
 }

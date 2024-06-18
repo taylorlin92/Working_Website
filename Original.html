@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Taylor Co., Ltd.</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Co., Ltd.</title>
+
+    <!-- Favicon 網址旁邊的圖案 -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts 網站用的字體 -->                
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
     
-        <!-- Favicon 網址旁邊的圖案 -->
-        <link href="img/favicon.ico" rel="icon">
-    
-        <!-- Google Web Fonts 網站用的字體 -->                
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
-        <!-- Libraries Stylesheet 特效功能-->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">   
-        <link href="lib/vegas/vegas.min.css" rel="stylesheet"> 
-    
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet"> 
-        <link href="css/bootstrap-icons.css" rel="stylesheet"> 
-    
-        <!-- Template Stylesheet -->
-        <link href="css/styles.css" rel="stylesheet" >
-    </head>
+    <!-- Libraries Stylesheet 特效功能-->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">   
+    <link href="lib/vegas/vegas.min.css" rel="stylesheet"> 
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="css/bootstrap-icons.css" rel="stylesheet"> 
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
 <body>
 <!--Navbar-->
@@ -32,11 +33,10 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/Logo/logo.PNG" alt="Taylor Logo"/>
-                </a>
+                    <img src="images/Logo/logo.PNG" alt="Taylor Logo" /></a>
             </div>
             <ul class="nav-links">
-                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
@@ -98,17 +98,12 @@
 </section>
 <!--End Of Next Section-->
 
-
-
 <!--Footer-->
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-left">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.2289806297745!2d121.51889627543828!3d25.09410903586842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aff944b558eb%3A0xa0b807678f550d21!2zU2VhIEN1cCBJc2xhbmQg576O5byP6aSQ6YWS6aSoIEJpc3RybyAmIEJhcu-8iOWvteeJqeWPi-WWhOmkkOW7sy_phZLlkKfmjqjolqYv5aOr5p6X6YWS5ZCnL-WMheWgtOaFtueUn-iBmuacg-mkkOW7s--8iQ!5e0!3m2!1szh-TW!2sjp!4v1718627046675!5m2!1szh-TW!2sjp" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-            <div class="footer_icons">
-                <i class="fa-regular fa-map"></i>
-                <p>12345 Some Street, Taipei, Taiwan</p>
-            </div>
+            <p>地址: 12345 Some Street, Some City, Some Country</p>
         </div>
         <div class="footer-center">
             <img src="images/Logo/white_logo.PNG" alt="Taylor Logo" />
@@ -120,14 +115,8 @@
         </div>
         <div class="footer-right">
             <h1>Contact us</h1>
-            <div class="footer_icons">
-                <i class="fa-solid fa-phone"></i>
-                <p>(02)22-22222</p>
-            </div>
-            <div class="footer_icons">
-                <i class="fa-regular fa-envelope"></i>
-                <p>taylor@gmail.com</p>
-            </div>
+            <p><i class="icon-phone"></i> 電話: +123 456 789</p>
+            <p><i class="icon-email"></i> 電郵: contact@example.com</p>
         </div>
     </div>
     <div class="footer-bottom">
@@ -136,12 +125,25 @@
 </footer>
 <!--End Of Footer-->
 
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+<!-- JavaScript Libraries -->
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
 
 <!--Java Script-->
-<script src="js/scripts.js"></script>
 <script>
     document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
 <!--End Of Java Script-->
+
 </body>
 </html>

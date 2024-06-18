@@ -1,0 +1,1485 @@
+/*
+
+Tooplate 2137 Barista
+
+https://www.tooplate.com/view/2137-barista-cafe
+
+*/
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+  --white-color:                  #ffffff;
+  --primary-color:                #BC6C25;
+  --footer-color:                 #6ABDE1;
+  --secondary-color:              #DDA15E;
+  --section-bg-color:             #b78752;
+  --custom-btn-bg-color:          #BC6C25;
+  --custom-btn-bg-hover-color:    #DDA15E;
+  --dark-color:                   #000000;
+  --p-color:                      #717275;
+  --border-color:                 #7fffd4;
+  --link-hover-color:             #E76F51;
+  --social-icon-color:            #0000FF;
+
+  --body-font-family:             'Plus Jakarta Sans', sans-serif;
+
+  --h1-font-size:                 68px;
+  --h2-font-size:                 46px;
+  --h3-font-size:                 32px;
+  --h4-font-size:                 28px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  20px;
+  --btn-font-size:                16px;
+  --form-btn-font-size:           18px;
+  --menu-font-size:               16px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         20px;
+  --border-radius-small:          10px;
+
+  --font-weight-thin:             200;
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-bold:             700;
+}
+
+body {
+  background-color: var(--white-color);
+  font-family: var(--body-font-family); 
+  padding-top: 50px; /* 这个值应该与导航栏的高度相匹配 */
+  scroll-padding-top: 70px; /* 根據導航欄的高度調整 */
+}
+
+
+/*---------------------------------------
+  TYPOGRAPHY               
+-----------------------------------------*/
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+}
+
+p {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+ul li {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+a, 
+button {
+  touch-action: manipulation;
+  transition: all 0.3s;
+}
+
+a {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+
+/*---------------------------------------
+  SECTION               
+-----------------------------------------*/
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-bg {
+  background-color: var(--section-bg-color);
+}
+
+.section-overlay {
+  background-color: var(--dark-color);
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+}
+
+.section-overlay + .container {
+  position: relative;
+  z-index: 22;
+}
+
+.back-top-icon {
+  font-size: var(--h2-font-size);
+}
+
+
+/*---------------------------------------
+  TIMELINE               
+-----------------------------------------*/
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  background-color: var(--white-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-container {
+  padding: 10px 40px;
+  padding-top: 0;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -12px;
+  background-color: var(--white-color);
+  border: 5px solid #7c5c52;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-container-left {
+  left: 0;
+}
+
+.timeline-container-right {
+  left: 50%;
+}
+
+.timeline-container-left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 9px;
+  width: 0;
+  z-index: 1;
+  right: 25px;
+  border: medium solid white;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-container-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 9px;
+  width: 0;
+  z-index: 1;
+  left: 25px;
+  border: medium solid white;
+  border-width: 20px 20px 20px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline-container-right::after {
+  left: -13px;
+}
+
+.timeline-content {
+  padding: 5px;
+  background-color: var(--white-color);
+  position: relative;
+  border-radius: var(--border-radius-medium);
+}
+
+@media screen and (max-width: 991px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-container::before {
+    left: 58px;
+    border: medium solid white;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-container-left::after, .timeline-container-right::after {
+    left: 6px;
+  }
+
+  .timeline-container-right {
+    left: 0%;
+  }
+}
+
+
+/*---------------------------------------
+  MENU @ FRONT PAGE               
+-----------------------------------------*/
+#menu-flters li {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--dark);
+  cursor: pointer;
+  transition: .5s;
+  border-bottom: 2px solid transparent;
+}
+
+#menu-flters li:hover,
+#menu-flters li.active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.menu-item img {
+  transition: .5s;
+}
+
+.menu-item:hover img {
+  transform: scale(1.1);
+}
+
+.menu-item .menu-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 50%;
+  background: rgba(53, 53, 53, .7);
+  transition: .5s;
+}
+
+.menu-item:hover .menu-overlay {
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.menu-item .menu-overlay .btn {
+  opacity: 0;
+}
+
+.menu-item:hover .menu-overlay .btn {
+  opacity: 1;
+}
+
+
+/*---------------------------------------
+  BUTTON               
+-----------------------------------------*/
+.btn {
+  font-weight: 500;
+  transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+  color: #FFFFFF;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+
+/*---------------------------------------
+  CUSTOM BUTTON               
+-----------------------------------------*/
+.custom-btn {
+  background: var(--custom-btn-bg-color);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--btn-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+  transition: all 0.3s;
+  padding: 12px 28px;
+}
+
+.custom-btn:hover {
+  background: var(--custom-btn-bg-hover-color);
+  color: var(--white-color);
+}
+
+.custom-border-btn {
+  background: transparent;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+}
+
+.custom-border-btn:hover {
+  background: var(--white-color);
+  color: var(--secondary-color);
+}
+
+.custom-btn-bg-white {
+  border-color: var(--white-color);
+  color: var(--white-color);
+}
+
+.custom-btn-italic {
+  font-style: italic;
+}
+
+
+/*---------------------------------------
+  NAVIGATION BAR & OFFCANVAS              
+-----------------------------------------*/
+.sticky-wrapper {
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.sticky-wrapper.is-sticky .container {
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: var(--border-radius-medium);
+  padding: 15px 30px;
+}
+
+.navbar {
+  background: transparent;
+  z-index: 999999;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.navbar .container {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: var(--border-radius-medium);
+  padding: 15px 30px;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px; /* 调整导航项之间的间距 */
+}
+.navbar-nav .nav-item:last-child {
+   margin-right: 0; /* 移除最后一个导航项的右边距 */
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-weight-bold);
+  display: block;
+  color: var(--white-color);
+}
+
+.navbar .navbar-brand-image {
+  filter: brightness(0) invert(1);
+}
+
+.navbar-brand-image {
+  width: 48px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar .custom-btn {
+  padding: 10px 20px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  border-radius: var(--border-radius-large);
+  margin: 10px;
+  padding: 10px;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  color: var(--white-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-bold);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+.navbar .dropdown-menu {
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  border: 0;
+  display: inherit;
+  opacity: 0;
+  min-width: 9rem;
+  margin-top: 20px;
+  padding: 13px 0 10px 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.navbar .dropdown-menu::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid var(--white-color);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}
+
+.navbar .dropdown-item {
+  display: inline-block;
+  color: var(--p-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-medium);
+  position: relative;
+}
+
+.navbar .dropdown-item.active, 
+.navbar .dropdown-item:active,
+.navbar .dropdown-item:focus, 
+.navbar .dropdown-item:hover {
+  background: transparent;
+  color: var(--link-hover-color);
+}
+
+.navbar .dropdown-toggle::after {
+  content: "\f282";
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-size: var(--menu-font-size);
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  left: 2px;
+  border: 0;
+} 
+
+
+@media screen and (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    margin-top: 0;
+    pointer-events: auto; 
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none;
+  }
+
+  .navbar .dropdown-menu::before {
+    display: none;
+  }
+
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: block; /* 當滑鼠懸停時顯示dropdown menu */
+  }
+
+  .navbar-nav .dropdown:hover .dropdown-menu a {
+    color: white;
+  }
+
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    background: none;
+    opacity: 1; /* 確保可見 */
+    pointer-events: auto; /* 確保可點擊 */
+    margin-top: 0;
+  }
+}
+
+
+/*@media screen and (max-width: 992px) {
+  .navbar .dropdown-menu {
+    a{color: white;}
+    background: none;
+    opacity: 1; /* 確保可見 */
+   /* pointer-events: auto; /* 確保可點擊 */
+   /* margin-top: 0;
+  } 
+
+  .navbar .dropdown-menu::before {
+    display: none;
+  }
+} */
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+  width: 30px;
+  height: 35px;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(-45deg);
+} 
+
+.navbar-toggler .navbar-toggler-icon {
+  background: var(--white-color);
+  transition: background 10ms 300ms ease;
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: var(--white-color);
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+
+/*---------------------------------------
+  SIDEBAR              
+-----------------------------------------*/
+.side-nav {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  margin-top: 120px; /* 使菜单位置比顶部导航栏低 */
+  margin-left: -15px; /* 去掉左边距 */
+}
+.side-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  padding: 10px 20px;
+}
+.side-nav .nav-link:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+.side-nav .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+.side-nav .collapse .nav-link {
+  padding-left: 40px;
+}
+
+
+
+.product-details {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+.product-image {
+  width: 100%; /* 设置图片的宽度 */
+  height: 250px; /* 设置图片的高度 */
+  object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
+} 
+
+.product-item {
+      text-align: center; /* 確保文字居中 */
+  }
+  .product-item a {
+      display: block; /* 確保鏈接和內容佔滿整個容器 */
+  }
+  .product-title {
+      margin-top: 10px; /* 確保標題與圖片之間有適當的間距 */
+  }
+.product-info {
+  margin-left: 20px;
+}
+
+
+/*---------------------------------------
+  HERO        
+-----------------------------------------*/
+.hero-section {
+  background-color: var(--dark-color);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-section::after {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: var(--border-radius-medium);
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-55%, -50%) rotate(45deg);
+  width: 250px;
+  height: 350px;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 991px) {
+  .hero-section {
+    height: 100vh;
+  }
+}
+
+.hero-section h1 {
+  color: var(--white-color);
+}
+
+.small-text {
+  color: var(--secondary-color);
+}
+
+.hero-section .custom-border-btn {
+  border-color: transparent;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 9;
+}
+
+.hero-slides {
+  width: 100%;
+  height: 100%;
+  position: absolute !important;
+}
+
+.opening-hours-list {
+  margin: 0;
+  padding: 0;
+}
+
+.opening-hours-list li {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--btn-font-size);
+  font-weight: var(--font-weight-normal);
+  margin-bottom: 10px;
+}
+
+.opening-hours-list li .underline {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 35%;
+  height: 1px;
+  margin: auto 15px 0 15px;
+}
+
+
+/*---------------------------------------
+  ABOUT              
+-----------------------------------------*/
+.about-section {
+  background-color: var(--secondary-color);
+  position: relative;
+}
+
+.about-section .ratio {
+  border-radius: var(--border-radius-medium);
+}
+
+.custom-video {
+  border-radius: var(--border-radius-medium);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image-wrap {
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-video-info {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  border-radius: var(--border-radius-medium);
+  bottom: 0;
+  height: auto;
+  padding: 40px;
+}
+
+.about-video-info h4 {
+  color: var(--white-color);
+}
+
+.about-section h6 {
+  color: var(--secondary-color);
+}
+
+.team-block-wrap {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  max-height: 450px;
+  cursor: pointer;
+}
+
+.team-block-wrap:hover .team-block-image {
+  transform: scale(1.2);
+}
+
+.team-block-image-wrap {
+  width: 100%;
+}
+
+.team-block-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.team-block-info {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+}
+
+.team-block-info .badge {
+  margin: auto;
+  top: 2px;
+  bottom: 0;
+}
+
+/*---------------------------------------
+  PRODUCTS              
+-----------------------------------------*/
+.product-category {
+  margin-top: 20px;
+  margin-bottom: -50px; /* 减少底部外边距 */
+}
+
+.product-item img {
+  transition: .5s;
+}
+
+.product-item:hover img {
+  transform: scale(1.1);
+}
+
+
+
+/*---------------------------------------
+  OUR MENU              
+-----------------------------------------*/
+.menu-section {
+  background-image: url('../images/PandaSkateboard.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-block-wrap {
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: var(--border-radius-medium);
+  padding: 45px;
+}
+
+.menu-block .border-top {
+  border-top-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.menu-block h6 {
+  color: var(--white-color);
+}
+
+.menu-block small {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.menu-block strong {
+  color: var(--secondary-color);
+}
+
+.menu-block-image {
+  border-radius: 100%;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+.badge {
+  background-color: var(--primary-color);
+  font-size: 12px;
+  position: relative;
+  bottom: 4px;
+  padding-bottom: 6px;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -5px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--primary-color);
+}
+
+
+/*---------------------------------------
+  REVIEWS              
+-----------------------------------------*/
+.reviews-section {
+  background-color: #7c5c52;
+}
+
+.reviews-block {
+  background-color: var(--section-bg-color);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-block .border-top {
+  border-top-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.reviews-block-image-wrap {
+  background-image: url('../images/mid-section-waitress-wiping-espresso-machine-with-napkin-cafa-c.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+
+.reviews-block-image {
+  border-radius: var(--border-radius-large);
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.reviews-block-info {
+  padding: 20px 30px;
+}
+
+.reviews-block-info p {
+  font-size: var(--btn-font-size);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.reviews-group i {
+  color: var(--white-color);
+}
+
+
+/*---------------------------------------
+  BOOKING SECTION              
+-----------------------------------------*/
+.booking-section {
+  background-image: url('../images/young-female-barista-wear-face-mask-serving-take-away-hot-coffee-paper-cup-consumer-cafe.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.booking-form-wrap {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.booking-form {
+  padding: 55px 65px;
+}
+
+.booking-form-image-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.booking-form-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-form-text span {
+  color: var(--white-color);
+  font-size: var(--btn-font-size);
+}
+
+.reservation-page .custom-border-btn {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.reservation-page .custom-border-btn:hover {
+  border-color: transparent;
+}
+
+
+/*---------------------------------------
+  CONTACT               
+-----------------------------------------*/
+.contact-section {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(188, 108, 37, 1)), url('../images/ContactPhoto.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.google-map {
+  border-radius: var(--border-radius-medium);
+}
+
+.contact-block-wrap {
+  background: var(--primary-color);
+  border-radius: var(--border-radius-medium);
+  padding: 0;
+  min-height: 200px;
+}
+
+.contact-block {
+  background: var(--secondary-color);
+  border-radius: var(--border-radius-medium);
+  transform: rotate(8deg);
+  height: 100%;
+  padding: 20px 40px;
+}
+
+.contact-block h6 {
+  transform: rotate(-8deg);
+}
+
+.contact-block .custom-icon {
+  background: var(--primary-color);
+  border-radius: var(--border-radius-large);
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.contact-block strong {
+  display: block;
+  color: var(--white-color);
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+/*---------------------------------------
+  CUSTOM FORM               
+-----------------------------------------*/
+.custom-form .form-control {
+  color: var(--p-color);
+  border-radius: var(--border-radius-small);
+  margin-bottom: 30px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  box-shadow: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.custom-form .form-control:hover,
+.custom-form .form-control:focus {
+  background: var(--primary-color);
+  border-color: transparent;
+}
+
+.custom-form .form-label {
+  color: var(--white-color);
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.custom-form button[type="submit"] {
+  background: var(--custom-btn-bg-color);
+  border: none;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--form-btn-font-size);
+  font-weight: var(--font-weight-bold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.custom-form button[type="submit"]:hover,
+.custom-form button[type="submit"]:focus {
+  background: var(--white-color);
+  border-color: transparent;
+  color: var(--primary-color);
+}
+
+.contact-form .form-control,
+.booking-form .form-control {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.booking-form .form-control {
+  color: var(--white-color);
+}
+
+.custom-form input::-webkit-input-placeholder,
+.custom-form textarea::-webkit-input-placeholder {
+   color: var(--white-color);
+}
+
+.booking-form input:-moz-placeholder,
+.booking-form textarea:-moz-placeholder {
+  color: var(--white-color);
+}
+
+
+/*---------------------------------------
+  SITE FOOTER              
+-----------------------------------------*/
+.site-footer {
+  background-color: var(--footer-color);
+}
+
+.site-footer strong {
+  color: var(--white-color);
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer p,
+.site-footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--btn-font-size);
+}
+
+.site-footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--btn-font-size);
+  transition: all 0.3s;
+}
+
+.site-footer-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+}
+
+.site-footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.site-footer .copyright .copyright-text {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--menu-font-size);
+  } 
+
+
+
+.site-footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  border: 1px solid #FFFFFF;
+  transition: .3s;
+}
+
+.site-footer .btn.btn-social:hover {
+  color: var(--primary);
+}
+
+
+/*---------------------------------------
+  SITE FOOTER BUTTON              
+-----------------------------------------*/
+.site-footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  text-decoration-line: none;
+  transition: .3s;
+}
+
+.site-footer .btn.btn-link::before {
+  position: relative;
+  content: "\F231";
+  font-family: "bootstrap-icons";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.site-footer .btn.btn-link:hover {
+  color: var(--primary);
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+  margin: 0;
+  padding: 0;
+}
+
+.social-icon-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.social-icon-link {
+  background: var(--social-icon-color);
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--menu-font-size);
+  display: block;
+  margin: 0 5px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-icon-link:hover {
+  background: var(--white-color);
+  color: var(--social-icon-color);
+}
+
+.social-icon-link span {
+  display: block;
+}
+
+.social-icon li a {
+  font-size: 24px;
+}
+
+/*---------------------------------------
+  RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 62px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 54px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hero-section {
+    padding-top: 148px;
+    padding-bottom: 100px;
+  }
+
+  .navbar-brand,
+  .navbar-brand:hover {
+    font-size: var(--h5-font-size);
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    padding-bottom: 20px;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .navbar .custom-btn {
+    margin-bottom: 10px;
+  }
+
+  .booking-form {
+    padding: 45px;
+  }
+
+  .contact-section .container {
+    width: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 35px;
+  }
+
+  .site-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-btn {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .menu-block-wrap,
+  .reviews-block-image-wrap,
+  .reviews-block-info {
+    padding: 20px;
+  }
+
+  .site-footer .col-lg-4,
+  .site-footer .col-lg-3,
+  .site-footer .col-lg-8 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .site-footer .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 578px) {
+  .navbar .container,
+  .sticky-wrapper.is-sticky .container {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  .hero-section::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  .booking-form {
+    padding: 35px;
+  }
+
+  .opening-hours-list li {
+    font-size: 12px;
+  }
+
+  .reviews-block-image-wrap {
+    flex-direction: column;
+  }
+
+  .reviews-block-image {
+    margin-bottom: 15px;
+  }
+
+  .timeline-container {
+    padding-left: 55px;
+  }
+
+  .timeline-container::before {
+    left: 44px;
+    border: medium solid white;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-container-left::before,
+  .timeline-container-right::before {
+    top: 13px;
+  }
+}
+
