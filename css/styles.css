@@ -223,6 +223,15 @@ header.scrolled .burger div {
 @media screen and (max-width: 992px) {
     .navbar .dropdown-menu {
       display: none;
+      left: 0;
+      border: 0;
+      display: inherit;
+      opacity: 0;
+      min-width: 9rem;
+      margin-top: 20px;
+      padding: 13px 0 10px 0;
+      pointer-events: auto;
+      top: 45px;
     }
   
     .navbar .dropdown-menu::before {
@@ -233,8 +242,12 @@ header.scrolled .burger div {
       display: block; /* 當滑鼠懸停時顯示dropdown menu */
     }
   
-    .navbar .dropdown:hover .dropdown-menu a {
-      color: white;
+    .navbar .dropdown-item.active, 
+    .navbar .dropdown-item:active,
+    .navbar .dropdown-item:focus, 
+    .navbar .dropdown-item:hover {
+        background: transparent;
+        color: #7DB9DE;
     }
   
     .navbar .dropdown:hover .dropdown-menu {
@@ -293,6 +306,8 @@ header.scrolled .burger div {
         transform: translateX(0); /* 最終位置回到原點 */
     }
 }
+
+  
 
 /* 
 ====================

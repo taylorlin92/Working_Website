@@ -35,7 +35,36 @@
                     <img src="images/Logo/logo.PNG" alt="Taylor Logo"/>
                 </a>
             </div>
-            <ul class="nav-links">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
+                            <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
+                            <li><a class="dropdown-item" href="product.html#leisure">Leisure</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <!--<ul class="nav-links">
                 <li><a href="./index.html">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li class="nav-item dropdown">
@@ -50,10 +79,10 @@
                 <li><a href="#">CONTACT</a></li>
             </ul>
             <div class="burger"><!--這是sidebar的三條線-->
-                <div class="line1"></div>
+                <!--<div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
-            </div>
+            </div> -->
         </nav>
     </header>
 <!--End Of Navbar-->
@@ -136,9 +165,24 @@
 </footer>
 <!--End Of Footer-->
 
+<!-- JAVASCRIPT FILES -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/vegas.min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+<!-- JavaScript Libraries -->
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+
 
 <!--Java Script-->
-<script src="js/scripts.js"></script>
 <script>
     document.getElementById("current-year").textContent = new Date().getFullYear();
 </script>
