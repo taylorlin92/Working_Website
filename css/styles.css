@@ -27,60 +27,24 @@ body {
 NAVBAR
 ====================
 */
-header {
-    position: fixed; /* 固定位置，讓導航欄在滾動時保持在頂部 */
-    width: 100%; /* 設定寬度為100% */
-    top: 0; /* 距離頂部0 */
-    left: 0; /* 距離左邊0 */
-    height: 10vh; /* 設定高度為視窗高度的10% */
-    background-color: transparent; /* 預設背景顏色為透明 */
-    color: black; /* 預設文字顏色為黑色 */
-    display: flex; /* 使用彈性佈局 */
-    align-items: center; /* 垂直居中對齊 */
-    justify-content: space-between; /* 水平分布元素 */
-    padding: 0 20px; /* 設定左右內邊距 */
-    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease; /* 添加背景顏色、文字顏色和陰影的過渡效果 */
-    z-index: 1000; /* 設置較高的層級，確保在最上方 */
-}
-
-header.scrolled {
-    background-color: white; /* 滾動後的背景顏色為白色 */
-    color: black; /* 滾動後的文字顏色為黑色 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 滾動後加強陰影效果 */
-    animation: shadowPulse 0.5s ease; /* 添加殘影動畫 */
-}
-
-/* 殘影動畫效果 */
-@keyframes shadowPulse {
-    0% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-}
-
 .navbar {
-    display: flex; /* 使用彈性佈局 */
-    justify-content: space-between; /* 將元素均勻分布在可用空間 */
-    align-items: center; /* 垂直居中對齊 */
-    width: 100%; /* 設定寬度為100% */
+    padding: 10px 20px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-.logo {
+.navbar-logo {
     height: 100%; /* 確保 logo 容器高度佔滿父元素 */
     display: flex; /* 使用彈性佈局 */
     align-items: center; /* 垂直居中對齊 */
     overflow: hidden; /* 確保內容不會超出容器 */
 }
 
-.logo img {
-    height: 100%; /* 設定圖片高度為父元素的100% */
-    width: auto; /* 自動調整寬度 */
-    max-height: 10vh; /* 確保圖片不會超出 navbar 的高度 */
+.navbar .navbar-logo-image {
+    height: 100%;
+    width: auto; 
+    max-height: 10vh;
     object-fit: contain; /* 確保圖片內容完整顯示 */
     padding: 0; /* 移除內邊距 */
     opacity: 0; /* 預設透明度為 0，隱藏 logo */
@@ -88,86 +52,27 @@ header.scrolled {
     transition: opacity 0.5s ease, visibility 0.5s ease; /* 添加透明度和可見度變化的過渡效果 */
 }
 
-/* 滾動後顯示 logo */
-header.scrolled .logo img {
-    opacity: 1; /* 滾動後顯示 logo */
-    visibility: visible; /* 設置為可見 */
+.navbar-nav .nav-link {
+    color: black;
+    padding: 10px 15px;
 }
 
-.navbar ul {
-    display: flex; /* 使用彈性佈局 */
-    list-style: none; /* 移除列表的預設樣式 */
-}
-
-.navbar ul li {
-    margin-left: 20px; /* 設定列表項目之間的間距 */
-}
-
-.navbar ul li a {
-    color: inherit; /* 繼承父元素的顏色 */
-    text-decoration: none; /* 移除連結的下劃線 */
-    font-size: 18px; /* 設定連結文字大小 */
-    transition: color 0.5s ease; /* 添加顏色變化的過渡效果，時間為0.5秒 */
-}
-
-.burger {
-    display: none; /* 預設隱藏漢堡圖示 */
-    cursor: pointer; /* 將滑鼠指標設置為指針樣式 */
-}
-
-.burger div {
-    width: 25px; /* 設定漢堡圖示線條寬度 */
-    height: 3px; /* 設定漢堡圖示線條高度 */
-    background-color: black; /* 預設漢堡圖示線條顏色 */
-    margin: 5px; /* 設定線條之間的間距 */
-    transition: all 0.3s ease; /* 設定過渡效果 */
-}
-
-/* 漢堡圖示變叉叉後連結顏色變為白色的樣式 */
-.nav-links.active li a {
-    color: white;
-}
-
-/* 點擊後漢堡圖示變成叉叉的樣式 */
-.burger.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px); /* 旋轉第一條線並移動 */
-}
-
-.burger.toggle .line2 {
-    opacity: 0; /* 隱藏第二條線 */
-}
-
-.burger.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px); /* 旋轉第三條線並移動 */
-}
-
-header.scrolled .burger div {
-    background-color: black; /* 滾動後漢堡圖示的顏色 */
-}
-
-.navbar ul li a:hover {
-    color: #7DB9DE; /* 懸停時連結顏色變為 #1E88A8 */
-}
-
-.burger:hover {
+.navbar-nav .nav-link:hover {
     color: #7DB9DE;
-}
-
-.burger div:hover {
-    background-color: #7DB9DE; /* 懸停時漢堡圖示的線條顏色變為 #1E88A8 */
+    text-decoration: underline;
 }
 
 /* Dropdown Menu */
-.navbar-links .nav-link {
+.navbar-nav .nav-link {
     display: inline-block;
-    color: white;
+    color: black;
     font-size: 18px;
     font-weight: bold;
     padding-top: 15px;
     padding-bottom: 15px;
 }
  
-.navbar-links .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #7DB9DE;
 }
   
@@ -178,11 +83,12 @@ header.scrolled .burger div {
     display: inherit;
     opacity: 0;
     min-width: 9rem;
-    margin-top: 20px;
+    margin-top: 0; /* 調整為 0，確保與 Product 對齊 */
     padding: 13px 0 10px 0;
     transition: all 0.3s;
-    pointer-events: auto;
-    top: 45px;
+    pointer-events: none;
+    top: 60px; 
+    left: 0;/* 確保下拉菜單與觸發按鈕對齊 */
 }
   
 .navbar .dropdown-menu::before {
@@ -212,6 +118,74 @@ header.scrolled .burger div {
     color: #7DB9DE;
 }
   
+.navbar-toggler {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    width: 30px;
+    height: 35px;
+    outline: none;
+  }
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+  }
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+  transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(-45deg);
+} 
+
+.navbar-toggler .navbar-toggler-icon {
+    background: black;
+    transition: background 10ms 300ms ease;
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+  transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+  transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background: black;
+  width: 30px;
+  height: 2px;
+  content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+
+/* 響應式設計 */
 @media screen and (min-width: 992px) {
     .navbar .dropdown:hover .dropdown-menu {
       opacity: 1;
@@ -223,91 +197,57 @@ header.scrolled .burger div {
 @media screen and (max-width: 992px) {
     .navbar .dropdown-menu {
       display: none;
-      left: 0;
-      border: 0;
-      display: inherit;
-      opacity: 0;
-      min-width: 9rem;
-      margin-top: 20px;
-      padding: 13px 0 10px 0;
-      pointer-events: auto;
-      top: 45px;
     }
   
-    .navbar .dropdown-menu::before {
-      display: none;
-    }
+.navbar .dropdown-menu::before {
+    display: none;
+}
   
-    .navbar .dropdown:hover .dropdown-menu {
-      display: block; /* 當滑鼠懸停時顯示dropdown menu */
-    }
+.navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 當滑鼠懸停時顯示dropdown menu */
+}
   
-    .navbar .dropdown-item.active, 
-    .navbar .dropdown-item:active,
-    .navbar .dropdown-item:focus, 
-    .navbar .dropdown-item:hover {
-        background: transparent;
-        color: #7DB9DE;
-    }
+.navbar .dropdown-item.active, 
+.navbar .dropdown-item:active,
+.navbar .dropdown-item:focus, 
+.navbar .dropdown-item:hover {
+    background: transparent;
+    color: #7DB9DE;
+}
   
-    .navbar .dropdown:hover .dropdown-menu {
-      background: none;
-      opacity: 1; /* 確保可見 */
-      pointer-events: auto; /* 確保可點擊 */
-      margin-top: 0;
-    }
+.navbar .dropdown:hover .dropdown-menu {
+    background: none;
+    opacity: 1; /* 確保可見 */
+    pointer-events: auto; /* 確保可點擊 */
+    margin-top: 0;
+}
+.navbar-nav {
+    text-align: center;
+    width: 100%;
 }
 
-/* 響應式設計 */
-@media (max-width: 1024px) {
-    .navbar ul {
-        display: none; /* 隱藏導航列表 */
-        flex-direction: column; /* 將列表設置為垂直方向 */
-        width: 100%; /* 設定列表寬度為100% */
-        background-color: #333; /* 設定背景顏色 */
-        position: absolute; /* 設定絕對定位 */
-        top: 10vh; /* 設定距頂部10vh */
-        right: 0; /* 設定距右側0px */
-        height: 90vh; /* 設定高度為90%視口高度 */
-        align-items: center; /* 垂直居中對齊 */
-        justify-content: center; /* 水平居中對齊 */
-        transition: all 0.3s ease-in; /* 設定過渡效果 */
-    }
-
-    .navbar ul.active {
-        display: flex; /* 顯示導航列表 */
-    }
-
-    .navbar ul li {
-        margin: 15px 0; /* 設定列表項目上下間距 */
-        text-align: center; /* 設定文字居中對齊 */
-    }
-
-    .burger {
-        display: block; /* 顯示漢堡圖示 */
-        position: absolute; /* 絕對定位 */
-        right: 20px; /* 距離右側20px */
-    }
-
-    /* 新增樣式，使 logo 在頁面縮小後居中顯示 */
-    .navbar {
-        justify-content: center; /* 水平居中對齊 */
-    }
+.navbar-nav .nav-item {
+    float: none;
+    display: inline-block;
+}
+/* 對齊 dropdown menu 與 Product */
+.navbar .dropdown-menu {
+    position: static;
+    transform: none;
 }
 
-/* 動畫效果 */
-@keyframes navLinkFade {
-    from {
-        opacity: 0; /* 初始透明度為0 */
-        transform: translateX(-50px); /* 初始位置偏移50px */
-    }
-    to {
-        opacity: 1; /* 最終透明度為1 */
-        transform: translateX(0); /* 最終位置回到原點 */
-    }
+.navbar .dropdown-item {
+    text-align: center;
 }
 
-  
+.navbar .dropdown-menu::before {
+    left: auto;
+    transform: none;
+}
+}
+
+/* 滾動後顯示 logo */
+
 
 /* 
 ====================

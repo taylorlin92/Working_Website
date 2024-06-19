@@ -28,41 +28,43 @@
 
 <body>
 <!--Navbar-->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/Logo/logo.PNG" alt="Taylor Logo"/>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-logo" href="index.html">
+            <img src="images/Logo/logo.PNG" alt="Taylor Logo" class="navbar-logo-image img-fluid" style="height: 40px;">
+        </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
-                            <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
-                            <li><a class="dropdown-item" href="product.html#leisure">Leisure</a></li>
-                        </ul>
-                    </li>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="news.html">News</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="product.html" id="navbarNavDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarNavDropdown">
+                        <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
+                        <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
+                        <li><a class="dropdown-item" href="product.html#leisure">Leisure</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="news.html">News</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
         </div>
             <!--<ul class="nav-links">
                 <li><a href="./index.html">HOME</a></li>
@@ -171,7 +173,10 @@
 <script src="js/jquery.sticky.js"></script>
 <script src="js/vegas.min.js"></script>
 <script src="js/scripts.js"></script>
-
+<!-- 引用 Bootstrap JS 和 jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- JavaScript Libraries -->
 <script src="lib/wow/wow.min.js"></script>
