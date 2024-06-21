@@ -1,3 +1,9 @@
+const burger = document.querySelector('.navbar-toggler'); // 選取漢堡圖示元素
+const nav = document.querySelector('.navbar-nav'); // 選取導航連結容器
+const navLinks = document.querySelectorAll('.navbar-nav li'); // 選取所有導航連結列表項目
+const header = document.querySelector('.navbar'); // 選取頁首元素
+const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選取 logo 圖片元素
+
 (function ($) {
     "use strict";
   
@@ -6,38 +12,51 @@
       $(".navbar-collapse").collapse('hide');
     });
 
-    $(document).ready(function () {
-        var lastScrollTop = 0;
-        $(window).scroll(function () {
-          var st = $(this).scrollTop();
-          if (st > lastScrollTop) {
-            // 向下滚动
-            $('.navbar').addClass('hidden');
-          } else {
-            // 向上滚动
-            $('.navbar').removeClass('hidden').addClass('navbar-logo-only');
-          }
-          lastScrollTop = st;
-        });
-  
-        // 初始化时显示 LOGO 和汉堡菜单
-        $('.navbar').addClass('navbar-logo-only');
-      });
+    // 點擊漢堡圖示時的事件處理
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('active'); // 切換導航連結容器的顯示狀態
 
-
-
-//home page next section
-document.querySelectorAll('.filter-menu button').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelector('.filter-menu .active').classList.remove('active');
-        button.classList.add('active');
-        const filter = button.getAttribute('data-filter');
-        const gridContainer = document.querySelector('.grid_container');
-        gridContainer.className = 'grid_container ' + filter;
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ''; // 如果有動畫，則清除動畫
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; // 設置動畫效果
+            }
     });
+    });
+
+    // 滾動頁面時的事件處理
+    window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
+        logo.style.opacity = 1; // 顯示 logo
+        logo.style.visibility = 'visible'; // 設置 logo 為可見
+    } else {
+        header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
+        logo.style.opacity = 0; // 隱藏 logo
+        logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
+    }
 });
 
 
+// Overview isotope and filter
+$(document).ready(function() {
+    // Initialize Isotope
+    var $grid = $('.overview-container').isotope({
+        itemSelector: '.overview-item',
+        layoutMode: 'fitRows'
+    });
+
+    // Filter items on button click
+    $('#overview-filters').on('click', 'li', function() {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+
+        // Change active class
+        $('#overview-filters li').removeClass('active');
+        $(this).addClass('active');
+    });
+});
 
 
 //footer
