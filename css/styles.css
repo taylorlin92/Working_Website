@@ -758,7 +758,7 @@ ABOUT
 @media (max-width: 576px) {
     .about-content {
         text-align: left;
-        padding: px;
+        padding: 20px;
     }
 
     .about-content h2{
