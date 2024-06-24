@@ -740,13 +740,13 @@ ABOUT
     }
 
     .about-content h2{
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         text-decoration: underline;
     }
     
     .about-content p {
-        font-size: 20px;
+        font-size: 10px;
     }
 
     .about-section {
@@ -759,6 +759,16 @@ ABOUT
     .about-content {
         text-align: left;
         padding: px;
+    }
+
+    .about-content h2{
+        font-size: 30px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .about-content p {
+        font-size: 10px;
     }
 
     .about-section {
