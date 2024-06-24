@@ -500,17 +500,23 @@ Main Section
 }
 
 /* 添加圓弧效果 */
-.next-section::before {
-    content: '';
+.curve-top-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 50px;
+    background-color: white;
+}
+.curve-top-container::before {
+    content: "";
+    display: block;
     position: absolute;
-    top: -50px; /* 向上偏移 */
+    top: -50px;
     left: 0;
     width: 100%;
     height: 100px;
-    background: white;
-    border-radius: 100% 100% 0 0; /* 設置圓角，形成更圓的效果 */
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2); /* 初始陰影效果 */
-    animation: arcShadow 2s infinite; /* 添加陰影動畫，持續時間 2 秒，無限循環 */
+    background-color: inherit;
+    border-radius: 50% 50% 0 0;
+    z-index: -1;
 }
 
 /* 圓弧陰影動畫 */

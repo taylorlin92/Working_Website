@@ -59,10 +59,5 @@ $(document).ready(function() {
 });
 
 
-//footer
-document.addEventListener('DOMContentLoaded', (event) => {
-    const year = new Date().getFullYear();
-    document.getElementById('copyright').innerHTML = `&copy; ${year} Taylor Co., Ltd. All rights reserved.`;
-});
 })(window.jQuery);
 
