@@ -739,6 +739,16 @@ ABOUT
         padding: 20px;
     }
 
+    .about-content h2{
+        font-size: 40px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .about-content p {
+        font-size: 20px;
+    }
+
     .about-section {
         padding-top: 100px; /* 確保在Navbar下面 */
         padding-bottom: 100px; /* 確保不會被Footer蓋到 */
