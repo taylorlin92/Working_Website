@@ -545,6 +545,9 @@ Overivew
 
 #overview-filters {
     margin-top: -40px; /* 把按鈕也往上移 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ISOTOPE 內容 */
@@ -623,17 +626,154 @@ Overivew
     .overview-item {
         width: calc(80% - 20px); /* Adjust for smaller smaller screens */
     }
+
+    .overview-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .overview-item {
+        width: 100%; /* Adjust to full width on smaller screens */
+        max-width: 300px; /* Set a max-width to control the size */
+        margin-bottom: 20px; /* Space between items */
+    }
+    
+    .overview-item img {
+        width: 100%; /* Ensures the image takes full width of the container */
+        height: auto; /* Maintains aspect ratio */
+        object-fit: cover; /* Ensures the image covers the container without distortion */
+    }
+
+        #overview-filters {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/*
+====================
+ABOUT
+====================
+*/
+.about-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* 佔滿頁面 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+/* 設置視頻背景樣式 */
+#bg-video {
+    position: absolute; /* 絕對定位 */
+    top: 0; /* 距離頂部 0 */
+    left: 0; /* 距離左側 0 */
+    width: 100%; /* 設置寬度為 100% */
+    height: 100%; /* 設置高度為 100% */
+    object-fit: cover; /* 確保視頻覆蓋整個容器 */
+    opacity: 0.5; /* 設置透明度為 0.5 */
+    z-index: -1; /* 設置層級，使其在 content 之下 */
+}
+
+/* 內容容器 */
+.about-content {
+    position: relative; /* 相對定位，確保視頻在後面 */
+    z-index: 2; /* 設置層級，使其顯示在視頻之上 */
+    text-align: left;
+    width: 80%;
+    max-width: 1200px;
+    padding: 30px 0px;
+    background: rgba(255, 255, 255, 0.8); /* 加上背面半透明的字幕背景 */
+    border-radius: 20px;
+    margin: auto;
+}
+
+.about-content h2{
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.about-content p {
+    font-size: 24px;
+}
+
+.custom-btn {
+    border: 2px solid transparent;
+    border-radius: 100px;
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s;
+    padding: 12px 28px;
+  }
+  
+.custom-btn:hover {
+    background: var(--link-hover-color);
+    border: 2px solid black;
+    color: black;
+    text-decoration: underline;
+}
+  
+.custom-border-btn {
+    background: transparent;
+    border: 2px solid black;
+    color: black;
+}
+  
+.custom-border-btn:hover {
+    background: white;
+    color: var(--link-hover-color);}
+  
+
+/* 響應式 */
+@media (max-width: 768px) {
+    .about-content {
+        text-align: left;
+        padding: 20px;
+    }
+
+    .about-content h2{
+        font-size: 40px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .about-content p {
+        font-size: 20px;
+    }
+
+    .about-section {
+        padding-top: 100px; /* 確保在Navbar下面 */
+        padding-bottom: 100px; /* 確保不會被Footer蓋到 */
+    }
 }
 
 @media (max-width: 576px) {
-    .overview-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center the column layout */
+    .about-content {
+        text-align: left;
+        padding: px;
     }
 
-    .overview-item {
-        flex: 1 0 calc(100% - 20px);
+    .about-content h2{
+        font-size: 30px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .about-content p {
+        font-size: 10px;
+    }
+
+    .about-section {
+        padding-top: 100px; /* 確保在Navbar下面 */
+        padding-bottom: 60px; /* 確保不會被Footer蓋到 */
     }
 }
 
