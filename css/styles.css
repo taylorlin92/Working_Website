@@ -660,11 +660,12 @@ ABOUT
 .about-section {
     position: relative;
     overflow: hidden;
-    height: 100vh; /* 佔滿頁面 */
+    min-height: 100vh; /* 佔滿頁面 */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
+    padding: 60px 20px; /* 確定下上Padding空間夠 */
+    box-sizing: border-box;
 }
 
 /* 設置視頻背景樣式 */
@@ -677,6 +678,7 @@ ABOUT
     object-fit: cover; /* 確保視頻覆蓋整個容器 */
     opacity: 0.5; /* 設置透明度為 0.5 */
     z-index: -1; /* 設置層級，使其在 content 之下 */
+    pointer-events: none; /* 確保不會點到影片觸發 */
 }
 
 /* 內容容器 */
@@ -684,18 +686,21 @@ ABOUT
     position: relative; /* 相對定位，確保視頻在後面 */
     z-index: 2; /* 設置層級，使其顯示在視頻之上 */
     text-align: left;
-    width: 80%;
-    max-width: 1200px;
-    padding: 30px 0px;
+    width: 90%;
+    max-width: 1200px; /* 避免stretch太多 */
     background: rgba(255, 255, 255, 0.8); /* 加上背面半透明的字幕背景 */
     border-radius: 20px;
     margin: auto;
+    font-size: 1.1rem;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .about-content h2{
     font-size: 50px;
     text-align: center;
     text-decoration: underline;
+    padding-bottom: 20px;
 }
 
 .about-content p {
@@ -706,7 +711,7 @@ ABOUT
     border: 2px solid transparent;
     border-radius: 100px;
     color: black;
-    font-size: 16px;
+    font-size: 20px;
     font-style: italic;
     font-weight: 700;
     line-height: normal;
@@ -729,51 +734,42 @@ ABOUT
   
 .custom-border-btn:hover {
     background: white;
-    color: var(--link-hover-color);}
-  
+    color: var(--link-hover-color);
+}
+
+.smoothscroll {
+    display: block;
+    text-align: center;
+}
+
 
 /* 響應式 */
+@media (max-width: 1200px) {
+    .about-content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        font-size: 0.9rem;
+    }
+    .about-section {
+        padding-top: 100px; /* 確保不會超過 Navbar */
+        padding-bottom: 100px; /* 確保不會被 Footer 蓋到 */
+    }
+}
+
 @media (max-width: 768px) {
     .about-content {
-        text-align: left;
+        font-size: 0.8rem;
         padding: 20px;
-    }
-
-    .about-content h2{
-        font-size: 30px;
-        text-align: center;
-        text-decoration: underline;
-    }
-    
-    .about-content p {
-        font-size: 15px;
-    }
-
-    .about-section {
-        padding-top: 100px; /* 確保在Navbar下面 */
-        padding-bottom: 100px; /* 確保不會被Footer蓋到 */
     }
 }
 
 @media (max-width: 576px) {
     .about-content {
-        text-align: left;
-        padding: 20px;
-    }
-
-    .about-content h2{
-        font-size: 30px;
-        text-align: center;
-        text-decoration: underline;
-    }
-    
-    .about-content p {
-        font-size: 15px;
-    }
-
-    .about-section {
-        padding-top: 100px; /* 確保在Navbar下面 */
-        padding-bottom: 60px; /* 確保不會被Footer蓋到 */
+        font-size: 0.75rem;
     }
 }
 
