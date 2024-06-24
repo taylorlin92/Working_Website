@@ -491,32 +491,37 @@ Main Section
 }
 
 
-/* Next Section */
-.next-section {
-    background-color: white; /* 設置背景顏色為白色 */
-    height: 100vh; /* 設置高度為視窗高度的 100% */
-    position: relative; /* 相對定位 */
-    z-index: 1; /* 設置層級 */
+/*
+====================
+Overivew
+====================
+*/
+/* 設定 container部份含上圓弧 */
+.container-fluid {
+    position: relative;
+    z-index: 2;
+    background: white;
 }
 
-/* 添加圓弧效果 */
-.curve-top-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 50px;
-    background-color: white;
-}
-.curve-top-container::before {
+/* 設計上圓弧 */
+.overview-section::before {
     content: "";
-    display: block;
     position: absolute;
     top: -50px;
     left: 0;
     width: 100%;
     height: 100px;
-    background-color: inherit;
-    border-radius: 50% 50% 0 0;
-    z-index: -1;
+    background: white;
+    border-top-left-radius: 20% 50px;
+    border-top-right-radius: 20% 50px;
+    z-index: 1;
+}
+
+.overview-section {
+    margin-top: -5px;
+    padding-top: 100px;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2); 
+    animation: arcShadow 2s infinite;
 }
 
 /* 圓弧陰影動畫 */
@@ -532,12 +537,17 @@ Main Section
     }
 }
 
+.section-title h1 {
+    margin-top: -20px; /* Adjust the value as needed */
+    position: relative;
+    top: -30px; /* Further adjust the position of the text */
+}
 
-/*
-====================
-Next Section: Overview
-====================
-*/
+#overview-filters {
+    margin-top: -40px; /* 把按鈕也往上移 */
+}
+
+/* ISOTOPE 內容 */
 #overview-filters li {
     display: inline-block;
     padding: 10px 20px;
@@ -556,7 +566,14 @@ Next Section: Overview
     color: var(--link-hover-color); /* 滑鼠停在按鈕上的文字颜色 */
 }
 
+.text-primary {
+    font-size: 40px;
+}
+
 .overview-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
     transition: .5s;
 }
 
@@ -589,6 +606,35 @@ Next Section: Overview
 
 .overview-item:hover .overview-overlay .btn {
     opacity: 1;
+}
+
+.overview-item {
+    width: calc(33.333% - 20px); /* Adjust the width as needed */
+    margin: 10px; /* Adjust the margin as needed */
+}
+
+@media (max-width: 992px) {
+    .overview-item {
+        width: calc(50% - 20px); /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .overview-item {
+        width: calc(80% - 20px); /* Adjust for smaller smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .overview-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the column layout */
+    }
+
+    .overview-item {
+        flex: 1 0 calc(100% - 20px);
+    }
 }
 
 
