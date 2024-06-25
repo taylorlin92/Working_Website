@@ -7,6 +7,7 @@ CUSTOM COLOR PROPERTIES
 :root {
     --link-hover-color:             #7DB9DE;
     --dropdown-menu-bg-color:       #333;
+    --service-bg-color:             #0096FF;
 }
 
 .fw-medium {
@@ -49,8 +50,6 @@ body {
     flex-direction: column;
     width: 100%;
 }
-
-
 
 /*
 ====================
@@ -660,12 +659,6 @@ ABOUT
 .about-section {
     position: relative;
     overflow: hidden;
-    min-height: 100vh; /* 佔滿頁面 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px; /* 確定下上Padding空間夠 */
-    box-sizing: border-box;
 }
 
 /* 設置視頻背景樣式 */
@@ -681,8 +674,29 @@ ABOUT
     pointer-events: none; /* 確保不會點到影片觸發 */
 }
 
+.intro-section {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0; /* 確定下上Padding空間夠 */
+    margin: 50px 0;
+    border-radius: 10px;
+}
+
+.intro-section .logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.custom-em {
+    font-size: 3.5em; 
+    font-weight: bold; 
+    font-style: italic; /* em的defult字體是斜體 */
+    color: black;
+    text-decoration: underline;
+}
+
 /* 內容容器 */
-.about-content {
+.intro-container {
     position: relative; /* 相對定位，確保視頻在後面 */
     z-index: 2; /* 設置層級，使其顯示在視頻之上 */
     text-align: left;
@@ -692,19 +706,40 @@ ABOUT
     border-radius: 20px;
     margin: auto;
     font-size: 1.1rem;
-    padding: 40px 20px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.about-content h2{
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: left;
+}
+
+.intro-content h2{
     font-size: 50px;
     text-align: center;
     text-decoration: underline;
     padding-bottom: 20px;
 }
 
-.about-content p {
+.intro-content p {
     font-size: 24px;
+}
+
+.intro-content h2,
+.intro-content p,
+.intro-content .custom-btn {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.intro-content .custom-btn {
+    align-self: flex-start;
 }
 
 .custom-btn {
@@ -717,7 +752,7 @@ ABOUT
     line-height: normal;
     transition: all 0.3s;
     padding: 12px 28px;
-  }
+}
   
 .custom-btn:hover {
     background: var(--link-hover-color);
@@ -742,36 +777,169 @@ ABOUT
     text-align: center;
 }
 
+.factory-section {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0; /* 確定下上Padding空間夠 */
+    border-radius: 10px;
+}
+
+
+.factory-block-wrap {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    max-height: 450px;
+    cursor: pointer;
+    margin: auto;
+}
+  
+.factory-block-wrap:hover .factory-block-image {
+    transform: scale(1.2);
+}
+  
+.factory-block-image-wrap {
+    width: 100%;
+    height: auto;
+}
+  
+.factory-block-image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+}
+  
+.factory-block-info {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(251, 192, 147, 0.8));
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+}
+  
+.badge {
+    margin-left: auto;
+    margin-top: auto;
+}
 
 /* 響應式 */
 @media (max-width: 1200px) {
-    .about-content {
+    .intro-content {
         font-size: 1rem;
+    }
+
+    .factory-block-wrap {
+        max-width: 400px; /* Adjust for medium screens */
     }
 }
 
 @media (max-width: 992px) {
-    .about-content {
+    .intro-content {
         font-size: 0.9rem;
     }
-    .about-section {
+
+    .intro-section {
         padding-top: 100px; /* 確保不會超過 Navbar */
         padding-bottom: 100px; /* 確保不會被 Footer 蓋到 */
+    }
+
+    .factory-block-wrap {
+        max-width: 350px; /* Adjust for smaller screens */
+    }
+
+    .factory-block-info {
+        margin-top: 20px; /* 把文字移到靠近底部 */
+    }
+
+    .badge {
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: 0;
     }
 }
 
 @media (max-width: 768px) {
-    .about-content {
+    .intro-section {
+        padding: 40px 0;
+    }
+
+    .intro-content {
         font-size: 0.8rem;
         padding: 20px;
     }
-}
 
-@media (max-width: 576px) {
-    .about-content {
-        font-size: 0.75rem;
+    .intro-content h2,
+    .intro-content p {
+        max-width: 100%;
+    }
+
+    .intro-section .intro-content {
+        text-align: left;
+    }
+
+    .factory-section {
+        padding-bottom: 50px;
+    }
+
+    .factory-block-wrap {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .factory-block-info h4{
+        margin-top: 2rem; /* Further adjust for smaller screens */
+    }
+
+    .factory-block-info p {
+        font-size: 1rem;
     }
 }
+
+
+/*
+====================
+SERVICE
+====================
+*/
+
+.service-custom-em {
+    font-size: 3.5em; 
+    font-weight: bold; 
+    font-style: italic; /* em的defult字體是斜體 */
+    color: black;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 2rem;
+}
+.service-item {
+    background-color: white;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--service-bg-color);
+}
+
+.service-item * {
+    transition: .5s;
+}
+
+.service-item:hover * {
+    color: white !important;
+}
+
+
+/*
+====================
+PRODUCT CAROUSEL
+====================
+*/
 
 
 /*
