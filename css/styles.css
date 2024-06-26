@@ -649,12 +649,8 @@ Overivew
     #overview-filters {
         justify-content: center;
         text-align: center;
-    }
-
-    #overview-filters .list-inline-item {
         display: block;
         margin: 10px 0;
-        text-align: center;
     }
 
     #bg-video {
