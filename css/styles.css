@@ -556,8 +556,10 @@ Overivew
     margin: 10px 5px;
     border: 2px solid black; /* 外框颜色 */
     border-radius: 50px; /* 橢圓形外框 */
+    white-space: nowrap; /* 禁止text wrap */
+    font-size: 1.5rem; /*設定一個尺寸 */
+    padding: 10px 15px; /* 增加PADDING */
     color: black;
-    font-size: 18px;
     cursor: pointer;
     transition: all 0.3s;
 }
