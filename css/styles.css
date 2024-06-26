@@ -334,6 +334,7 @@ NAVBAR
     .navbar .navbar-logo {
         justify-content: center; /* 水平居中對齊 */
     }
+
     .navbar .navbar-logo .navbar-logo-image {
         position: absolute;
         left: 50%;
@@ -557,7 +558,7 @@ Overivew
     border: 2px solid black; /* 外框颜色 */
     border-radius: 50px; /* 橢圓形外框 */
     white-space: nowrap; /* 禁止text wrap */
-    font-size: 1.5rem; /*設定一個尺寸 */
+    font-size: 18px; /*設定一個尺寸 */
     padding: 10px 15px; /* 增加PADDING */
     color: black;
     cursor: pointer;
