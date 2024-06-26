@@ -74,7 +74,7 @@ $('.smoothscroll').click(function(){
 
       $('body,html').animate({
       scrollTop: totalScroll
-      }, 300);
+      }, 200);
     }
   });
 
