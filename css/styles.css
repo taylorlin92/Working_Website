@@ -923,10 +923,6 @@ ABOUT
     .factory-block-info p {
         font-size: 1rem;
     }
-
-    #bg-video {
-        pointer-events: none;
-    }
 }
 
 
