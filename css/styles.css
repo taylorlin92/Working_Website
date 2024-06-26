@@ -656,6 +656,11 @@ Overivew
 ABOUT
 ====================
 */
+/* Index.html＆ Meet our Facilities 按鈕可以連到about#factory並不被Navbar擋到 */
+#factory {
+    padding-bottom: 20px; /* 根據 footer 的高度調整 */
+    scroll-margin-top: 80px; /* 根據 header 或 footer 的高度調整 */
+}
 .about-section {
     position: relative;
     overflow: hidden;
@@ -793,6 +798,10 @@ ABOUT
     max-height: 450px;
     cursor: pointer;
     margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
   
 .factory-block-wrap:hover .factory-block-image {
@@ -808,7 +817,7 @@ ABOUT
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
     transition: all 0.3s;
 }
   
@@ -840,6 +849,10 @@ ABOUT
 }
 
 @media (max-width: 992px) {
+    .custom-em {
+        font-size: 3.3rem;
+    }
+
     .intro-content {
         font-size: 0.9rem;
     }
@@ -865,6 +878,10 @@ ABOUT
 }
 
 @media (max-width: 768px) {
+    .custom-em {
+        font-size: 3.2rem;
+    }
+
     .intro-section {
         padding: 40px 0;
     }
@@ -906,7 +923,11 @@ ABOUT
 SERVICE
 ====================
 */
-
+/* Index.html service按鈕可以連到about#service並不被Navbar擋到 */
+#service {
+    padding-bottom: 20px; /* 根據 footer 的高度調整 */
+    scroll-margin-top: 70px; /* 根據 header 或 footer 的高度調整 */
+}
 .service-custom-em {
     font-size: 3.5em; 
     font-weight: bold; 
@@ -922,6 +943,10 @@ SERVICE
     transition: .5s;
 }
 
+.service-item h4 {
+    text-decoration: underline;
+}
+
 .service-item:hover {
     background: var(--service-bg-color);
 }
@@ -934,6 +959,10 @@ SERVICE
     color: white !important;
 }
 
+.service-icon {
+    font-size: 3rem; /* 修改icon尺寸 */
+    justify-content: center;
+}
 
 /*
 ====================
