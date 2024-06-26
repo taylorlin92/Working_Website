@@ -643,10 +643,19 @@ Overivew
         height: auto; /* Maintains aspect ratio */
         object-fit: cover; /* Ensures the image covers the container without distortion */
     }
-
-        #overview-filters {
+    #overview-filters {
         justify-content: center;
         text-align: center;
+    }
+
+    #overview-filters .list-inline-item {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #bg-video {
+        pointer-events: none;
     }
 }
 
@@ -914,6 +923,10 @@ ABOUT
 
     .factory-block-info p {
         font-size: 1rem;
+    }
+
+    #bg-video {
+        pointer-events: none;
     }
 }
 
