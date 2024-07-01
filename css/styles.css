@@ -61,7 +61,8 @@ NAVBAR
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 90px
+    height: 90px;
+    margin-bottom: 20px;
 }
 
 .navbar-logo {
@@ -972,12 +973,142 @@ SERVICE
     justify-content: center;
 }
 
+
+/*
+====================
+PRODUCT SIDEBAR
+====================
+*/
+.products {
+    display: flex;
+    
+}
+.side-nav {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-top: 120px; /* 使Sidebar位置比Navbar低 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    flex-shrink: 0; /* 避免縮放 */
+}
+
+.sidebar-title h2 {
+    margin: 0;
+    padding: 10px;
+    white-space: nowrap; /* 防止文字換行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 用省略號表示超出部分 */
+}
+
+.sidebar_categories {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar_categories li {
+    margin: 5px 0;
+}
+
+.sidebar_categories li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-nav .site-nav {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    padding: 5px 20px;
+}
+
+.sidebar_categories .lvl-1 > a.site-nav {
+    font-size: 1.4rem; /* 調整這裡的數值來設定所需的字體大小 */
+    font-weight: bold; /* 可選：增加字體粗細 */
+}
+
+.sublinks {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 10px;
+}
+
+.side-nav .site-nav:hover {
+    background-color: transparent;
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+
+/*
+====================
+PRODUCT
+====================
+*/
+/* 隱藏超過三個的產品 */
+.product-list .more-item {
+    display: none;
+}
+
+.product-details {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.product-image {
+    width: 100%; /* 设置图片的宽度 */
+    height: 250px; /* 设置图片的高度 */
+    object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
+} 
+  
+.product-item {
+    text-align: center; /* 確保文字居中 */
+}
+
+.product-item a {
+    display: block; /* 確保鏈接和內容佔滿整個容器 */
+}
+
+.product-title {
+    margin-top: 10px; /* 確保標題與圖片之間有適當的間距 */
+}
+
+.product-info {
+    margin-left: 20px;
+}
+  
+
 /*
 ====================
 PRODUCT CAROUSEL
 ====================
 */
+.flex-grow-1 P{
+    flex: 1;
+    overflow-y: auto;
+}
+.product-carousel {
+    flex: 1;
+    height: calc(100vh - 56px); /* Subtract the height of the navbar */
+    margin-top: 120px;
+}
 
+.carousel-inner img {
+    width: 100px;
+    height: 500px;
+}
 
 /*
 ====================
