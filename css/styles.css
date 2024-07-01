@@ -1061,6 +1061,15 @@ PRODUCT
     display: none;
 }
 
+.section-padding {
+    margin-top: 20px;
+}
+
+.more-btn {
+    display: inline-block;
+    margin: 0;
+}
+
 .product-details {
     display: flex;
     align-items: flex-start;
@@ -1072,6 +1081,14 @@ PRODUCT
     height: 250px; /* 设置图片的高度 */
     object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
 } 
+
+.product-title {
+    margin-top: 5px; /* 照片跟標題的距離 */
+    margin-bottom: 20px; /* 確保標題下還有空隙 */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
   
 .product-item {
     text-align: center; /* 確保文字居中 */
