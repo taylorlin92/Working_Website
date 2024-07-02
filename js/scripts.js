@@ -38,22 +38,6 @@ const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選�
     }
 });
 
-//Product點擊及dropdown同步 ->沒反應
-document.addEventListener('DOMContentLoaded', (event) => {
-    const productNav = document.getElementById('product-dropdown');
-    const productLink = productNav.querySelector('.nav-link');
-    const dropdownMenu = productNav.querySelector('.dropdown-menu');
-
-    productLink.addEventListener('click', (e) => {
-        dropdownMenu.style.display = 'block';
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!productNav.contains(e.target)) {
-            dropdownMenu.style.display = 'none';
-        }
-    });
-});
 
 // Overview isotope and filter
 $(document).ready(function() {
