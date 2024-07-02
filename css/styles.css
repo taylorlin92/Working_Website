@@ -1122,9 +1122,135 @@ PRODUCT CAROUSEL
     margin-top: 120px;
 }
 
-.carousel-inner img {
-    width: 100px;
-    height: 500px;
+.carousel-container {
+    background: linear-gradient(
+    149deg,rgb(247, 0, 255) 0%, rgb(255, 145, 0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.slider {
+width: 100%;
+max-width: 600px;
+height: 400px;
+margin: 20px;
+text-align: center;
+border-radius: 20px;
+overflow: hidden;
+position: relative;
+}
+
+.slides {
+display: flex;
+overflow-x: scroll;
+position: relative;
+scroll-behavior: smooth;
+scroll-snap-type: x mandatory;
+}
+
+.slide:nth-of-type(even) {
+background-color: rgb(250, 246, 212);
+}
+
+.slide {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+width: 100%;
+height: 400px;
+scroll-snap-align: center;
+margin-right: 0px;
+box-sizing: border-box;
+background: white;
+transform-origin: center center;
+transform: scale(1);
+}
+
+.slide__text {
+font-size: 40px;
+font-weight: bold;
+font-family: sans-serif;
+}
+
+.slide a {
+background: none;
+border: none;
+}
+
+a.slide__prev,
+.slider::before {
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
+left: 5%;
+}
+
+a.slide__next,
+.slider::after {
+transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg);
+right: 5%;
+}
+
+.slider::before,
+.slider::after,
+.slide__prev,
+.slide__next {
+position: absolute;
+top: 48%;
+width: 35px;
+height: 35px;
+border: solid black;
+border-width: 0 4px 4px 0;
+padding: 3px;
+box-sizing: border-box;
+}
+
+.slider::before,
+.slider::after {
+content: "";
+z-index: 1;
+background: none;
+pointer-events: none;
+}
+
+.slider__nav {
+box-sizing: border-box;
+position: absolute;
+bottom: 5%;
+left: 50%;
+width: 200px;
+margin-left: -100px;
+text-align: center;
+}
+
+.slider__navlink {
+display: inline-block;
+height: 15px;
+width: 15px;
+border-radius: 50%;
+background-color: black;
+margin: 0 10px 0 10px;
+}
+
+.read-article{
+position: absolute;
+top: 10px;
+left: 10px;
+z-index: 999;
+color: #000;
+background: white;
+padding: 10px 20px;
+border-radius: 10px;
+font-family: arial;
+text-decoration: none;
+box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+}
+.read-article:hover{
+background: #d5d5d5;
+box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
 }
 
 /*
@@ -1141,7 +1267,8 @@ Footer
 .footer .container {
     max-width: 100%;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column; /* 確保在小螢幕上是垂直排列 */
+    align-items: center; /* 內容置中 */
 }
 
 .footer {
@@ -1155,6 +1282,7 @@ Footer
 .footer_icons {
     display: flex;
     align-items: center;
+    justify-content: center; /* 確保圖標置中 */
     margin-left: 10px; /* 根据需要调整这个值 */
 }
 
@@ -1201,16 +1329,17 @@ Footer
     display: flex;
     justify-content: center; /* 水平置中 */
     padding: 0;
-    margin: 15px 0 0 0; /* 增加与图片之间的间距 */
+    margin: 15px 0 0 0; /* 增加與圖片之間的間距 */
 }
 
 .footer-menu li {
-    list-style: none; /* 移除默认列表样式 */
-    margin: 0 50px; /* 设置列表项间距 */
+    list-style: none; /* 移除默認列表樣式 */
+    margin: 0 50px; /* 設置列表项間距 */
 }
 
 .footer-menu a:hover {
-    color: var(--link-hover-color); /* 根据需要调整悬停颜色 */
+    color: var(--link-hover-color); /* 根據需要調整滑鼠點到時的颜色 */
+    text-decoration: underline;
 }
   
 .footer-menu {
@@ -1227,6 +1356,7 @@ Footer
 /* 调整右邊部份的上外邊距 */
 .right-side {
     margin-top: 40px !important; /* 根据需要调整这个值来增加上外边距，使用 !important 优先级 */
+    text-align: center;
 }
 
 /* 调整 Contact Us 字体大小 */
@@ -1426,5 +1556,55 @@ h1.contact-us-title {
 
     .footer-menu li {
         margin: 30px 10px;
+    }
+
+    .footer .col-lg-2,
+    .footer .col-lg-4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .left-side, .right-side, .middle {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h1.contact-us-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .footer-link {
+        font-size: 1rem;
+    }
+
+    .footer-icons i {
+        font-size: 1rem;
+    }
+
+    .footer-menu {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer_icons {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-menu li {
+        margin: 10px 5px;
     }
 }
