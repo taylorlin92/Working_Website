@@ -1053,62 +1053,49 @@ PRODUCT SIDEBAR
     text-decoration: underline;
 }
 
+/* 當寬度小於992px時的樣式 */
+@media (max-width: 992px) {
+    .products {
+        flex-direction: column;
+    }
 
-/*
-====================
-PRODUCT
-====================
-*/
-/* 隱藏超過三個的產品 */
-.product-list .more-item {
-    display: none;
+    .side-nav {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+        box-shadow: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        order: 1;
+    }
+
+    .side-nav .sidebar-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .side-nav .sidebar_categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .side-nav .sidebar_categories li {
+        flex: 1 1 45%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .main-content {
+        margin-top: 0;
+    }
+
+    .product-carousel {
+        order: 2;
+    }
 }
 
-.section-padding {
-    margin-top: 20px;
-}
-
-.more-btn {
-    display: inline-block;
-    margin: 0;
-}
-
-.product-details {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.product-image {
-    width: 100%; /* 设置图片的宽度 */
-    height: 250px; /* 设置图片的高度 */
-    object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
-} 
-
-.product-title {
-    margin-top: 5px; /* 照片跟標題的距離 */
-    margin-bottom: 20px; /* 確保標題下還有空隙 */
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-}
-  
-.product-item {
-    text-align: center; /* 確保文字居中 */
-}
-
-.product-item a {
-    display: block; /* 確保鏈接和內容佔滿整個容器 */
-}
-
-.product-title {
-    margin-top: 10px; /* 確保標題與圖片之間有適當的間距 */
-}
-
-.product-info {
-    margin-left: 20px;
-}
-  
 
 /*
 ====================
@@ -1256,6 +1243,63 @@ a.slide__next,
     background: #d5d5d5;
     box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
 }
+
+
+/*
+====================
+PRODUCT
+====================
+*/
+/* 隱藏超過三個的產品 */
+.product-list .more-item {
+    display: none;
+}
+
+.section-padding {
+    margin-top: 20px;
+}
+
+.more-btn {
+    display: inline-block;
+    margin: 0;
+}
+
+.product-details {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.product-image {
+    width: 100%; /* 设置图片的宽度 */
+    height: 250px; /* 设置图片的高度 */
+    object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
+} 
+
+.product-title {
+    margin-top: 5px; /* 照片跟標題的距離 */
+    margin-bottom: 20px; /* 確保標題下還有空隙 */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+  
+.product-item {
+    text-align: center; /* 確保文字居中 */
+}
+
+.product-item a {
+    display: block; /* 確保鏈接和內容佔滿整個容器 */
+}
+
+.product-title {
+    margin-top: 10px; /* 確保標題與圖片之間有適當的間距 */
+}
+
+.product-info {
+    margin-left: 20px;
+}
+  
 
 /*
 ====================
