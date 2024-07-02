@@ -71,9 +71,9 @@
         </header>
         <!-- Navbar Ends -->
 
-        <main class="products d-flex mt-5 pt-4">
+        <main class="products d-flex flex-column flex-md-row mt-5 pt-4">
             <!-- Sidebar Starts -->
-            <nav class="nav flex-column side-nav mb-4" style="width:300px;">
+            <nav class="nav flex-column side-nav mb-4 mb-md-0" style="width:300px;">
                 <div class="sidebar-title"><h2 class="mb-0">Products</h2></div>
                 <ul class="clearfix sidebar_categories mb-0">
                     <li class="lvl-1 sub-level">
@@ -124,7 +124,7 @@
                     </li>
                 </ul>
             </nav>
-            <!-- Sidebar Starts -->
+            <!-- Sidebar Ends -->
 
             <div class="flex-grow-1">
                 <!-- Carousel Start -->
@@ -922,10 +922,8 @@
         });
 
             button.innerText = isExpanded ? 'More' : 'Less';
-        button.setAttribute('data-expanded', !isExpanded);
+            button.setAttribute('data-expanded', !isExpanded);
         }
-        </script>
-
 
         <!--End Of Java Script-->
     </body>
