@@ -988,7 +988,7 @@ PRODUCT SIDEBAR
 .side-nav {
     background-color: #f8f9fa;
     padding: 15px;
-    margin-top: 120px; /* 使Sidebar位置比Navbar低 */
+    margin-top: 80px; /* 使Sidebar位置比Navbar低 */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     flex-shrink: 0; /* 避免縮放 */
@@ -1122,7 +1122,7 @@ PRODUCT CAROUSEL
 .product-carousel {
     flex: 1;
     height: calc(100vh - 56px); /* 減去NavBar高度 */
-    margin-top: 120px;
+    margin-top: 80px;
 }
 
 .carousel-container {
