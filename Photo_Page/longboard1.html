@@ -227,6 +227,18 @@
                 button.innerHTML = '+';
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Adjust scroll position to avoid being hidden by the navbar
+        var hash = window.location.hash;
+        if (hash) {
+            var element = document.querySelector(hash);
+            if (element) {
+                var offset = element.getBoundingClientRect().top + window.scrollY - document.querySelector('.navbar').offsetHeight;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
+        }
+    });
         </script>
         <!--End Of Java Script-->
     </body>
