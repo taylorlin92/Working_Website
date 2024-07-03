@@ -1299,6 +1299,62 @@ PRODUCT
 .product-info {
     margin-left: 20px;
 }
+
+.product-content-title {
+    margin-top: 55px;
+    margin-bottom: 40px;
+}
+
+.product-content-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* 設定最大寬度 */
+    margin-bottom: 20px; /* 保持與文字的距離 */
+}
+
+.product-content p {
+    font-size: 24px;
+}
+
+.product-content li {
+    font-size: 20px;
+}
+
+/* 當寬度大於992px時，保持現狀 */
+@media (min-width: 993px) {
+    .products {
+        display: flex;
+    }
+
+    .side-nav {
+        display: block;
+    }
+
+    .product-content {
+        order: 2;
+    }
+}
+
+/* 當寬度小於992px時 */
+/* 隱藏 side-nav */
+@media (max-width: 992px) {
+    .products {
+        display: flex;
+        flex-direction: column;
+    }
+    .side-nav {
+        display: none;
+    }
+
+    .side-nav-mobile {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-content {
+        padding: 0 15px;
+    }
+}
   
 
 /*

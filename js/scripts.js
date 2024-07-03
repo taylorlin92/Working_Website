@@ -79,5 +79,36 @@ $('.smoothscroll').click(function(){
     }
   });
 
+// 平滑滾動到指定部分
+document.querySelectorAll('.site-nav').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // 移除選中樣式
+        document.querySelectorAll('.site-nav').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // 添加選中樣式
+        this.classList.add('active');
+
+        // 滾動到目標位置
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        // 檢查目標元素是否存在
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 })(window.jQuery);
 

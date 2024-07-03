@@ -6,7 +6,7 @@
         <title>Taylor Co., Ltd.</title>
     
         <!-- Favicon 網址旁邊的圖案 -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="./images/Logo/skateboard-cartoon-illustration-png.webp" rel="icon">
     
         <!-- Google Web Fonts 網站用的字體 -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,9 +52,9 @@
                         <li class="nav-item dropdown" id="product-dropdown">
                             <a class="nav-link dropdown-toggle" href="product.html" id="navbarNavDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarNavDropdown">
-                                    <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
-                                    <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
                                     <li><a class="dropdown-item" href="product.html#leisure">Leisure</a></li>
+                                    <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
+                                    <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
                                 </ul>
                         </li>
 
@@ -71,55 +71,56 @@
         </header>
         <!-- Navbar Ends -->
 
+        <!-- Main Content Starts -->
         <main class="products d-flex mt-5 pt-4">
             <!-- Sidebar Starts -->
             <nav class="nav flex-column side-nav mb-4" style="width:300px;">
                 <div class="sidebar-title"><h2 class="mb-0">Products</h2></div>
                 <ul class="clearfix sidebar_categories mb-0">
                     <li class="lvl-1 sub-level">
-                        <a href="#;" class="site-nav">Leisure</a>
+                        <a href="#leisure" class="site-nav">Leisure</a>
                         <ul class="sublinks">
-                            <li class="level2"><a href="#;" class="site-nav">Trickboards</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Longboards</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Penny boards</a></li>
+                            <li class="level2"><a href="#longboards" class="site-nav">Longboards</a></li>
+                            <li class="level2"><a href="#pennyboards" class="site-nav">Penny boards</a></li>
+                            <li class="level2"><a href="#trickboards" class="site-nav">Trickboards</a></li>
                             <li class="level2 sub-level sub-sub-level">
-                                <a href="#;" class="site-nav">
+                                <a href="#accessories;" class="site-nav">
                                     Accessories
                                     <button class="toggle-btn" onclick="toggleSubLinks(this)">+</button>
                                 </a>
                                 <ul class="sublinks mb-0" style="display: none;">
-                                    <li class="level3"><a href="#" class="site-nav">Bearings</a></li>
-                                    <li class="level3"><a href="#" class="site-nav">Bushings</a></li>
-                                    <li class="level3"><a href="#" class="site-nav">Trucks</a></li>
-                                    <li class="level3"><a href="#" class="site-nav">Wheels</a></li>
+                                    <li class="level3"><a href="#bearings" class="site-nav">Bearings</a></li>
+                                    <li class="level3"><a href="#bushings" class="site-nav">Bushings</a></li>
+                                    <li class="level3"><a href="#trucks" class="site-nav">Trucks</a></li>
+                                    <li class="level3"><a href="#wheels" class="site-nav">Wheels</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="lvl-1 sub-level"><a href="#;" class="site-nav">Snowboard Accessories</a>
+                    <li class="lvl-1 sub-level"><a href="#snowsports" class="site-nav">Snowboard Accessories</a>
                         <ul class="sublinks">
-                            <li class="level2"><a href="#" class="site-nav">Cargo Nets & Straps</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Hardware Tools</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Leashes & Locks</a></li>
+                            <li class="level2"><a href="#cargonetstraps" class="site-nav">Cargo Nets & Straps</a></li>
+                            <li class="level2"><a href="#hardwaretools" class="site-nav">Hardware Tools</a></li>
+                            <li class="level2"><a href="#leasheslocks" class="site-nav">Leashes & Locks</a></li>
                             <li class="level2 sub-level sub-sub-level">
-                                <a href="#;" class="site-nav">
+                                <a href="#stomppads;" class="site-nav">
                                     Traction Stomp Pad
                                     <button class="toggle-btn" onclick="toggleSubLinks(this)">+</button>
                                 </a>
                                 <ul class="sublinks mb-0" style="display: none;">
-                                    <li class="level3"><a href="#" class="site-nav">Aluminum & Metal</a></li>
-                                    <li class="level3"><a href="#" class="site-nav">PC</a></li>
-                                    <li class="level3"><a href="#" class="site-nav">PU</a></li>
+                                    <li class="level3"><a href="#aluminummetal" class="site-nav">Aluminum & Metal</a></li>
+                                    <li class="level3"><a href="#polycarbonate" class="site-nav">PC</a></li>
+                                    <li class="level3"><a href="#polyurethane" class="site-nav">PU</a></li>
                                 </ul>
                             </li>
                             <li class="level2"><a href="#" class="site-nav">Tuning</a></li>
                         </ul>
                     </li>
-                    <li class="lvl-1 sub-level"><a href="#;" class="site-nav">Watersports</a>
+                    <li class="lvl-1 sub-level"><a href="#watersports" class="site-nav">Watersports</a>
                         <ul class="sublinks">
-                            <li class="level2"><a href="#;" class="site-nav">Skimboards</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Wakeboard Accessories</a></li>
-                            <li class="level2"><a href="#" class="site-nav">Waterski Accessories</a></li>
+                            <li class="level2"><a href="#skimboards" class="site-nav">Skimboards</a></li>
+                            <li class="level2"><a href="#wakeboardfins" class="site-nav">Wakeboard Accessories</a></li>
+                            <li class="level2"><a href="#waterskifins" class="site-nav">Waterski Accessories</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -170,42 +171,6 @@
                         <div class="d-flex justify-content-between align-items-center section-header">
                             <h2>Leisure</h2>
                         </div>
-                        <section class="section-padding" id="trickboards">
-                            <h3>Trickboards</h3>
-                            <div class="row product-list">
-                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
-                                    <a href="Photo_Page/trickboard1.html">
-                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 1" class="product-image">
-                                        <p class="product-title">Trickboard</p>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
-                                    <a href="Photo_Page/trickboard2.html">
-                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 2" class="product-image">
-                                        <p class="product-title">Trickboard</p>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
-                                    <a href="Photo_Page/trickboard3.html">
-                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 3" class="product-image">
-                                        <p class="product-title">Trickboard</p>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s" style="display: none;">
-                                    <a href="Photo_Page/trickboard4.html">
-                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 4" class="product-image">
-                                        <p class="product-title">Trickboard</p>
-                                    </a>
-                                </div>
-                                <div class="col-lg-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s" style="display: none;">
-                                    <a href="Photo_Page/trickboard4.html">
-                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 5" class="product-image">
-                                        <p class="product-title">Trickboard</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary more-btn" onclick="toggleMoreProducts(this)">More</button>
-                        </section>
                         <section class="section-padding" id="longboards">
                             <h3>Longboards</h3>
                             <div class="row product-list">
@@ -265,6 +230,42 @@
                                 </div>                            
                             </div>
                             <button class="btn btn-primary more-btn mb-3" onclick="toggleMoreProducts(this)">More</button>
+                        </section>
+                        <section class="section-padding" id="trickboards">
+                            <h3>Trickboards</h3>
+                            <div class="row product-list">
+                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
+                                    <a href="Photo_Page/trickboard1.html">
+                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 1" class="product-image">
+                                        <p class="product-title">Trickboard</p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
+                                    <a href="Photo_Page/trickboard2.html">
+                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 2" class="product-image">
+                                        <p class="product-title">Trickboard</p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 wow fadeInUp product-item" data-wow-delay="0.1s">
+                                    <a href="Photo_Page/trickboard3.html">
+                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 3" class="product-image">
+                                        <p class="product-title">Trickboard</p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s" style="display: none;">
+                                    <a href="Photo_Page/trickboard4.html">
+                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 4" class="product-image">
+                                        <p class="product-title">Trickboard</p>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s" style="display: none;">
+                                    <a href="Photo_Page/trickboard5.html">
+                                        <img src="images/Product_Photos/Skateboards/Boards/Trickboard_1.jpg" alt="Trickboard 5" class="product-image">
+                                        <p class="product-title">Trickboard</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary more-btn" onclick="toggleMoreProducts(this)">More</button>
                         </section>
                         <section class="Accessories" id="Accessories">
                             <h2>Accessories</h2>
@@ -925,8 +926,6 @@
         button.setAttribute('data-expanded', !isExpanded);
         }
         </script>
-
-
         <!--End Of Java Script-->
     </body>
 </html>
