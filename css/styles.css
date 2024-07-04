@@ -8,6 +8,8 @@ CUSTOM COLOR PROPERTIES
     --link-hover-color:             #7DB9DE;
     --dropdown-menu-bg-color:       #333;
     --service-bg-color:             #0096FF;
+    --news-color:                   #cff7ff;
+    --news-bg-color:                #FEFBE6;
 }
 
 .fw-medium {
@@ -1359,8 +1361,228 @@ PRODUCT
         padding: 0 15px;
     }
 }
-  
 
+/*
+====================
+NEWS
+====================
+*/
+.news {
+    padding: 80px 0; /* 增加上下內邊距 */
+}
+
+.news-section {
+    background-color: var(--news-bg-color);
+}
+
+.news .section-heading {
+    margin-bottom: 100px; /* 調整標題的底部邊距 */
+}
+
+.news .section-heading h2 {
+    font-size: 8.5rem;
+    margin-top: 50px;
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+  
+.news .news-item {
+    background-color:var(--news-color);
+    border-radius: 25px;
+    position: relative;
+    padding: 40px; /* 減少內邊距 */
+    margin-bottom: 96px; /* 減少底部邊距 */
+}
+  
+.news .news-item .news-image {
+    position: relative;
+}
+  
+.news .news-item .news-image img {
+    position: absolute;
+    border-radius: 25px;
+    max-width: 100%; /* 確保圖片能夠適應容器 */
+    height: auto; /* 保持圖片邊距*/
+    left: 0;
+    top: -70px;
+}
+  
+.news .news-item ul li {
+    display: inline-block;
+    width: 17.5%;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+  
+.news .news-item ul li:first-child {
+    width: 35%;
+}
+  
+.news .news-item ul li:nth-of-type(2) {
+    width: 28%;
+}
+  
+.news .news-item ul li span.news-category {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--link-hover-color);
+    background-color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+  
+.news .news-item ul li h4 {
+    font-size: 22px;
+    font-weight: 600;
+}
+  
+.news .news-item ul li span {
+    display: inline-block;
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+  
+.news .news-item ul li h6 {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+  
+.news .news-item a {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background-image: url('https://img.freepik.com/premium-photo/seamless-wood-texture-background_105762-34.jpg');
+    background-color: black;
+    width: 60px; /* 減少寬度 */
+    height: 120px; /* 調整高度 */
+    display: inline-block;
+    text-align: center;
+    line-height: 120px; /* 調整行高 */
+    font-size: 18px; 
+    z-index: 1;
+    color: #fff;
+    border-radius: 60px 0px 0px 60px; /* 調整圓角 */
+}
+
+/* 響應式 */
+@media (max-width: 1200px) {
+    .news {
+      margin-top: 20px;
+    }
+
+    .news .navbar{
+        background-color: var(--news-bg-color);
+    }
+
+    .news .section-heading h2 {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .news {
+      margin-top: 20px;
+    }
+
+    .news .news-item {
+      margin-bottom: 66px;
+    }
+
+    .news .news-item .news-image img {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .news .news-item ul {
+      margin-top: -40px;
+    }
+
+    .news .news-item ul li:first-child {
+      width: 100% !important;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .news .news-item ul li:nth-child(2) {
+      width: 40% !important;
+    }
+
+    .news .news-item ul li {
+      display: inline-block;
+      width: 28% !important;
+    }
+
+    .news .news-item ul li:last-child {
+      text-align: right;
+    }
+
+    .news .news-item a {
+      bottom: 150px;
+      top: auto;
+    }
+
+    .news .news-item ul li h6 {
+      font-size: 14px;
+    }
+}
+    
+@media (max-width: 768px) {
+    .news .news-item {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .news .section-heading h2 {
+        font-size: 4.5rem;
+        margin-top: 50px;
+    }
+
+    .news .news-item .news-image img {
+        max-width: 100%;
+        height: auto;
+        top: -50px; /* 調整圖片位置 */
+    }
+
+    .news .news-item ul li {
+        display: block;
+    }
+
+    .news .news-item a {
+        right: 5px;
+        top: 15px;
+        width: 45px; /* 調整寬度 */
+        height: 80px; /* 調整高度 */
+        line-height: 80px;
+        font-size: 14px; /* 調整字體大小 */
+    }
+}
+
+@media (max-width: 576px) {
+    .news .news-item {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .news .news-item .news-image img {
+        top: -30px; /* 調整圖片位置 */
+    }
+
+    .news .news-item a {
+        width: 40px; /* 調整寬度 */
+        height: 60px; /* 調整高度 */
+        line-height: 60px;
+        font-size: 12px; /* 調整字體大小 */
+    }
+}
+
+  
 /*
 ====================
 Footer
