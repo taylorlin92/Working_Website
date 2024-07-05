@@ -1587,87 +1587,103 @@ NEWS
 CONTACT
 ====================
 */
-.contact-section {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(188, 108, 37, 1));
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 100px;
+.contact-page .left-text {
+    background-color: #c6eef4;
+    border-radius: 25px;
+    padding: 50px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+  
+.contact-page .left-text .section-heading {
+    margin-bottom: 40px;
 }
 
-.contact-em {
-    font-size: 28px;
+.contact-page .left-text h6{
+    margin-bottom: 10px;
+    color: lightseagreen;
 }
 
-.custom-form .form-control {
+.contact-page .right-content ul li {
+    display: block;
+    font-size: 16px;
     color: black;
-    border-radius: 18px;
-    margin-bottom: 30px;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    box-shadow: none;
-    outline: none;
-    transition: all 0.3s;
+    font-size: 300;
+    margin-bottom: 5px;
 }
   
-.custom-form .form-control:hover,
-.custom-form .form-control:focus {
-    background: transparent;
-    border-color: white;
+.contact-page .right-content ul li:last-child {
+    margin-bottom: 50px;
 }
   
-.custom-form .form-label {
-    color: black;
-    font-style: italic;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-  
-.custom-form button[type="submit"] {
-    background: white;
-    border: none;
-    border-radius: 20px;
-    color: black;
-    font-size: 18px;
+.contact-page .right-content ul li span {
+    display: block;
+    font-size: 20px;
     font-weight: 600;
-    transition: all 0.3s;
-    margin-bottom: 0;
+    color: blue;
+    margin-bottom: 5px;
 }
   
-.custom-form button[type="submit"]:hover,
-.custom-form button[type="submit"]:focus {
-    background: white;
-    border-color: transparent;
+.contact-page .right-content {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+  
+.contact-page .right-content #map {
+    margin-bottom: 20px;
+}
+  
+.contact-page .left-text form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0px 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #e7e7e7;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+}
+  
+.contact-page .left-text form textarea {
+    width: 100%;
+    height: 130px;
+    border-radius: 25px;
+    padding: 20px 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #e7e7e7;
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+}
+  
+.contact-page .left-text form button {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    background-color: #f7868e;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 25px;
+    transition: all .3s;
+}
+  
+.contact-page .left-text form button:hover {
+    background-color: white;
     color: var(--link-hover-color);
-  }
-  
-  .contact-form .form-control,
-  .booking-form .form-control {
-    background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.25);
-}
-  
-.form-control {
-    color: white;
-}
-  
-.custom-form input::-webkit-input-placeholder,
-.custom-form textarea::-webkit-input-placeholder {
-     color: white;
 }
 
 @media (max-width: 992px) {
-    .google-map {
-        align-items: center;
-    }
+    .contact-page .right-content {
+        margin-left: 0px;
+        margin-top: 45px;
+  }
 }
 
-@media (max-width: 768px) {
-    .google-map {
-        align-items: center;
-    }
-}
-  
 
 /*
 ====================
