@@ -28,18 +28,18 @@
     </head>
 
     <body>
-        <!--Navbar-->
+        <!--Navbar Starts-->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top">
                 <a class="navbar-logo" href="index.html">
                     <img src="images/Logo/logo.PNG" alt="Taylor Logo" class="navbar-logo-image img-fluid">
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
@@ -49,12 +49,12 @@
                             <a class="nav-link" href="about.html">About</a>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="product.html" id="navbarNavDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarNavDropdown">
-                                    <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
-                                    <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
+                        <li class="nav-item dropdown" id="product-dropdown">
+                            <a class="nav-link dropdown-toggle" href="product.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="product.html#leisure">Leisure</a></li>
+                                    <li><a class="dropdown-item" href="product.html#snowsports">Snowsports</a></li>
+                                    <li><a class="dropdown-item" href="product.html#watersports">Watersports</a></li>
                                 </ul>
                         </li>
 
@@ -69,7 +69,7 @@
                 </div>
             </nav>
         </header>
-        <!--End Of Navbar-->
+        <!-- Navbar Ends -->
 
 
         <div class="main-content">
@@ -307,11 +307,10 @@
 
         <script src="js/scripts.js"></script>
 
-
-
         <!--JavaScript-->
         <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
+
         </script>
         <!--End Of Java Script-->
     </body>

@@ -22,67 +22,74 @@ const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選�
             } else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; // 設置動畫效果
             }
-    });
+        });
     });
 
     // 滾動頁面時的事件處理
     window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
-        logo.style.opacity = 1; // 顯示 logo
-        logo.style.visibility = 'visible'; // 設置 logo 為可見
-    } else {
-        header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
-        logo.style.opacity = 0; // 隱藏 logo
-        logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
-    }
-});
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
+            logo.style.opacity = 1; // 顯示 logo
+            logo.style.visibility = 'visible'; // 設置 logo 為可見
+        } else {
+            header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
+            logo.style.opacity = 0; // 隱藏 logo
+            logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
+        }
+    });
+
+    // JavaScript 用于在点击 "Product" 时跳转到 product.html
+    document.querySelector('#navbarDropdown').addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-menu')) {
+            window.location.href = 'product.html';
+        }
+    });
 
 
-// Overview isotope and filter
-$(document).ready(function() {
+    // Overview isotope and filter
+    $(document).ready(function() {
     // Initialize Isotope
-    var $grid = $('.overview-container').isotope({
-        itemSelector: '.overview-item',
-        layoutMode: 'fitRows'
+        var $grid = $('.overview-container').isotope({
+         itemSelector: '.overview-item',
+            layoutMode: 'fitRows'
+        });
+
+    // Filter items on button click
+    $('#overview-filters').on('click', 'li', function() {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+
+    // Change active class
+        $('#overview-filters li').removeClass('active');
+        $(this).addClass('active');
+        });
     });
 
-// Filter items on button click
-$('#overview-filters').on('click', 'li', function() {
-    var filterValue = $(this).attr('data-filter');
-    $grid.isotope({ filter: filterValue });
 
-// Change active class
-    $('#overview-filters li').removeClass('active');
-    $(this).addClass('active');
+    // CUSTOM LINK
+    $('.smoothscroll').click(function(){
+        var el = $(this).attr('href');
+        var elWrapped = $(el);
+        var header_height = $('.navbar').height() + 60;
+
+        scrollToDiv(elWrapped,header_height);
+        return false;
+
+        function scrollToDiv(element,navheight){
+        var offset = element.offset();
+        var offsetTop = offset.top;
+        var totalScroll = offsetTop-navheight;
+
+        $('body,html').animate({
+        scrollTop: totalScroll
+        }, 200);
+        }
     });
-});
 
-
-// CUSTOM LINK
-$('.smoothscroll').click(function(){
-    var el = $(this).attr('href');
-    var elWrapped = $(el);
-    var header_height = $('.navbar').height() + 60;
-
-    scrollToDiv(elWrapped,header_height);
-    return false;
-
-    function scrollToDiv(element,navheight){
-      var offset = element.offset();
-      var offsetTop = offset.top;
-      var totalScroll = offsetTop-navheight;
-
-      $('body,html').animate({
-      scrollTop: totalScroll
-      }, 200);
-    }
-  });
-
-// 平滑滾動到指定部分
-document.querySelectorAll('.site-nav').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+    // 平滑滾動到指定部分
+    document.querySelectorAll('.site-nav').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
         // 移除選中樣式
         document.querySelectorAll('.site-nav').forEach(link => {
