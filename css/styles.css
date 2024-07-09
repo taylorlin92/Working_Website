@@ -1326,6 +1326,7 @@ PRODUCT
     scroll-margin-top: 100px; /* Adjust the value as needed */
 }
 
+
 /* 當寬度大於992px時，保持現狀 */
 @media (min-width: 993px) {
     .products {

@@ -105,7 +105,7 @@ const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選�
 
         // 檢查目標元素是否存在
         if (targetElement) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const navbarHeight = 100px;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
