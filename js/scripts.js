@@ -38,14 +38,6 @@ const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選�
         }
     });
 
-    // JavaScript 用于在点击 "Product" 时跳转到 product.html
-    document.querySelector('#navbarDropdown').addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown-menu')) {
-            window.location.href = 'product.html';
-        }
-    });
-
-
     // Overview isotope and filter
     $(document).ready(function() {
     // Initialize Isotope
