@@ -86,7 +86,7 @@
                             <li class="level2 sub-level sub-sub-level">
                                 <a href="../product.html#accessories" class="site-nav">
                                     Accessories
-                                    <button class="toggle-btn" onclick="toggleSubLinks(this)">+</button>
+                                    <button class="toggle-btn" onclick="toggleSubLinks(this, event)">+</button>
                                 </a>
                                 <ul class="sublinks mb-0" style="display: none">
                                     <li class="level3"><a href="../product.html#bearings" class="site-nav">Bearings</a></li>
@@ -105,7 +105,7 @@
                             <li class="level2 sub-level sub-sub-level">
                                 <a href="../product.html#stomppads" class="site-nav">
                                     Traction Stomp Pad
-                                    <button class="toggle-btn" onclick="toggleSubLinks(this)">+</button>
+                                    <button class="toggle-btn" onclick="toggleSubLinks(this, event)">+</button>
                                 </a>
                                 <ul class="sublinks mb-0" style="display: none">
                                     <li class="level3"><a href="../product.html#aluminummetal" class="site-nav">Aluminum & Metal</a></li>
@@ -216,16 +216,18 @@
         <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
 
-        // 在Sidebar有下拉的部分加按鈕，點下去後會有下拉菜單
-        function toggleSubLinks(button) {
-            var subLinks = button.parentNode.nextElementSibling;
-            if (subLinks.style.display === "none" || subLinks.style.display === "") {
-                subLinks.style.display = "block";
-                button.innerHTML = '-';
-            } else {
-                subLinks.style.display = "none";
-                button.innerHTML = '+';
-            }
+        //Side Menu點＋號下單菜單出來
+        function toggleSubLinks(button, event) {
+            event.preventDefault(); // 阻止 <a> 元素的默認行為
+                
+                const subLinks = button.parentElement.nextElementSibling;
+                const isVisible = subLinks.style.display === "block";
+                
+                // Toggle the display of the sub-links
+                subLinks.style.display = isVisible ? "none" : "block";
+    
+                // Change the button text
+                button.textContent = isVisible ? "+" : "-";
         }
         </script>
         <!--End Of Java Script-->
