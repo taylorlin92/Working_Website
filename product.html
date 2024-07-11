@@ -130,38 +130,37 @@
             <div class="flex-grow-1">
                 <!-- Carousel Start -->
                 <section class="product-carousel mb-4">
-                    <div class="carousel-container">
-                        <div class="slider">
-                          <div class="slides">
-                            <div id="slides__1" class="slide">
-                              <span class="slide__text">1</span>
-                              <a class="slide__prev" href="#slides__4" title="Next"></a>
-                              <a class="slide__next" href="#slides__2" title="Next"></a>
+                    <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" id="slides_1">
+                                <div class="img-box">
+                                    <img src="images/Skateboard_C.avif" alt="Slide 1" class="slide_image">
+                                </div>
                             </div>
-                            <div id="slides__2" class="slide">
-                              <span class="slide__text">2</span>
-                              <a class="slide__prev" href="#slides__1" title="Prev"></a>
-                              <a class="slide__next" href="#slides__3" title="Next"></a>
+                            <div class="carousel-item" id="slides_2">
+                                <div class="img-box">
+                                    <img src="images/Snowboard_C.avif" alt="Slide 2" class="slide_image">
+                                </div>
                             </div>
-                            <div id="slides__3" class="slide">
-                              <span class="slide__text">3</span>
-                              <a class="slide__prev" href="#slides__2" title="Prev"></a>
-                              <a class="slide__next" href="#slides__4" title="Next"></a>
+                            <div class="carousel-item" id="slides_3">
+                                <div class="img-box">
+                                    <img src="images/skimboarding_C.jpg" alt="Slide 3" class="slide_image">
+                                </div>
                             </div>
-                            <div id="slides__4" class="slide">
-                              <span class="slide__text">4</span>
-                              <a class="slide__prev" href="#slides__3" title="Prev"></a>
-                              <a class="slide__next" href="#slides__1" title="Prev"></a>
-                            </div>
-                          </div>
-                          <div class="slider__nav">
-                            <a class="slider__navlink" href="#slides__1"></a>
-                            <a class="slider__navlink" href="#slides__2"></a>
-                            <a class="slider__navlink" href="#slides__3"></a>
-                            <a class="slider__navlink" href="#slides__4"></a>
-                          </div>
+                            <a class="carousel-control-prev" href="#product-carousel" role="button" data-slide="prev">
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#product-carousel" role="button" data-slide="next">
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                      </div>
+                        <div class="slider_nav">
+                            <a class="slider_navlink" href="#product-carousel" data-slide-to="0"></a>
+                            <a class="slider_navlink" href="#product-carousel" data-slide-to="1"></a>
+                            <a class="slider_navlink" href="#product-carousel" data-slide-to="2"></a>
+                        </div>
+                        
+                    </div>
                 </section>
                 <!-- Carousel Ends -->
 
@@ -824,13 +823,6 @@
                 </section>
             </div>
         </main>
-
-
-
-            
-            
-
-
 
         <!-- Footer Start -->
         <footer class="container-fluid text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s">

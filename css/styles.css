@@ -1108,142 +1108,92 @@ PRODUCT CAROUSEL
     flex: 1;
     overflow-y: auto;
 }
+
 .product-carousel {
     flex: 1;
     height: calc(100vh - 56px); /* 減去NavBar高度 */
     margin-top: 80px;
+    position: relative; /* 確保 slider_nav 可以定位在圖片內部 */
 }
 
-.carousel-container {
-    background: linear-gradient(
-    149deg,rgb(247, 0, 255) 0%, rgb(255, 145, 0) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-carousel .carousel-inner {
     height: 100%;
 }
-
-.slider {
+  
+.product-carousel .img-box {
     width: 100%;
-    max-width: 600px;
-    height: 400px;
-    margin: 20px;
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
+    height: 100%; /* 確保img-box佔滿高度 */
 }
 
-.slides {
-    display: flex;
-    overflow-x: scroll;
-    position: relative;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-
-.slide:nth-of-type(even) {
-    background-color: rgb(250, 246, 212);
-}
-
-.slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+.product-carousel .img-box img {
     width: 100%;
-    height: 400px;
-    scroll-snap-align: center;
-    margin-right: 0px;
-    box-sizing: border-box;
-    background: white;
-    transform-origin: center center;
-    transform: scale(1);
+    height: 100%; /* 確保圖片佔滿 img-box */
+    object-fit: cover; /* 確保圖片比例 */
 }
 
-.slide__text {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-
-.slide a {
-    background: none;
-    border: none;
-}
-
-a.slide__prev,
-.slider::before {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    left: 5%;
-}
-
-a.slide__next,
-.slider::after {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    right: 5%;
-}
-
-.slider::before,
-.slider::after,
-.slide__prev,
-.slide__next {
+.slider_nav {
     position: absolute;
-    top: 48%;
-    width: 35px;
-    height: 35px;
-    border: solid black;
-    border-width: 0 4px 4px 0;
-    padding: 3px;
-    box-sizing: border-box;
-}
-
-.slider::before,
-.slider::after {
-    content: "";
-    z-index: 1;
-    background: none;
-    pointer-events: none;
-}
-
-.slider__nav {
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 5%;
+    bottom: 20px;
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
     text-align: center;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+    z-index: 2; /* 確保 nav 在圖片上層 */
 }
 
-.slider__navlink {
-    display: inline-block;
+.slider_navlink {
+    display: inline-block; /* 最下方 */
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: black;
-    margin: 0 10px 0 10px;
+    background-color:white; /* 三個點點顏色 */
+    text-indent: -9999px;
 }
 
-.read-article{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
-    color: #000;
-    background: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-family: arial;
+.product-carousel .carousel-control-prev,
+.product-carousel .carousel-control-next {
+    width: 90px;
+    height: 90px;
+    background-color: #252525;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-size: 12px;
     text-decoration: none;
-    box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+    z-index: 2; /* 確保控制項在圖片上層 */
+}
+  
+.product-carousel .carousel-control-prev:hover,
+.product-carousel .carousel-control-next:hover {
+    background-color: rgba(37, 37, 37, 1); /* 懸停時顏色 */
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+  
+.product-carousel .carousel-control-prev {
+    border-radius: 0 100% 100% 0;
+    left: -10px;
+    background-position: 58px center;
+}
+  
+.product-carousel .carousel-control-next {
+    border-radius: 100% 0 0 100%;
+    right: -10px;
+    background-position: 20px center;
 }
 
-.read-article:hover{
-    background: #d5d5d5;
-    box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+/* 響應式 */
+@media (max-width: 768px) {
+    .product-carousel .carousel-control-prev,
+    .product-carousel .carousel-control-next {
+        display: none;
+    }
 }
 
 
