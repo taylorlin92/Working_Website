@@ -108,5 +108,4 @@ const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // ÈÅ∏Âè
         }
     });
 });
-
 })(window.jQuery);
