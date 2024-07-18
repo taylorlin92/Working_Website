@@ -1520,8 +1520,8 @@ PRODUCT CONTENT
     }
 
     .product-content-image {
-        width: 100%; /* 確保圖片寬度為100% */
-        max-width: 100%; /* 在小屏幕上，最大寬度100% */
+        width: 30%; /* 確保圖片寬度為100% */
+        height: auto;
     }
 }
 
