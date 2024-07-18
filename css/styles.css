@@ -1513,14 +1513,15 @@ PRODUCT CONTENT
         font-size: 18px;
     }
 
-    .product-content-image {
-        width: 100%; /* 確保圖片寬度為100% */
-        max-width: none; /* 移除最大寬度限制 */
-    }
-
     .product-content-img {
         padding-left: 0;
         padding-right: 0;
+        text-align: center;
+    }
+
+    .product-content-image {
+        width: 100%; /* 確保圖片寬度為100% */
+        max-width: 100%; /* 在小屏幕上，最大寬度100% */
     }
 }
 
