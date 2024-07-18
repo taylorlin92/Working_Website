@@ -50,8 +50,8 @@
                         </li>
 
                         <li class="nav-item dropdown" id="product-dropdown">
-                            <a class="nav-link dropdown-toggle" href="../product.html" id="navbarNavDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarNavDropdown">
+                            <a class="nav-link dropdown-toggle" href="../product.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Product</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="../product.html#leisure">Leisure</a></li>
                                     <li><a class="dropdown-item" href="../product.html#snowsports">Snowsports</a></li>
                                     <li><a class="dropdown-item" href="../product.html#watersports">Watersports</a></li>
@@ -133,10 +133,10 @@
                     <div class="container">
                         <h1 class="product-content-title">Longboards</h1>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4 col-sm-6 product-content-img">
                                 <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Longboard 1" class="product-content-image">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-8 col-sm-6">
                                 <p>Material & Spec Information:</p>
                                 <ul>
                                     <li>Material: </li>
@@ -229,6 +229,13 @@
                 // Change the button text
                 button.textContent = isVisible ? "+" : "-";
         }
+
+        // 修正下拉菜單的點擊行為
+        document.querySelector('.nav-item.dropdown .dropdown-toggle').addEventListener('click', function(e) {
+            if (this.getAttribute('aria-expanded') === 'false') {
+            window.location.href = this.getAttribute('href');
+            }
+        });
         </script>
         <!--End Of Java Script-->
     </body>

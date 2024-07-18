@@ -1123,6 +1123,16 @@ PRODUCT CAROUSEL
     overflow: hidden;
 }
 
+.carousel-link {
+    text-decoration: none; /* 去除下划线 */
+    color: white; /* 保持文本颜色 */
+}
+
+.carousel-link:hover {
+    text-decoration: none; /* 确保悬停时也没有下划线 */
+    color: var(--link-hover-color); /* 修改为你想要的悬停颜色 */
+}
+
 #product-carousel .carousel-control-prev,
 #product-carousel .carousel-control-next {
     background: transparent;
@@ -1217,7 +1227,7 @@ PRODUCT CAROUSEL
     height: 12px;
     border-radius: 12px !important;
     border: 5px solid transparent;
-    transition: 0.5s;
+    transition: 0.3s;
     cursor: pointer;
     
 }
@@ -1334,6 +1344,14 @@ PRODUCT
     object-fit: scale-down; /* 确保图片保持比例，縮小以适应容器 */
 } 
 
+.product-image:hover {
+    transform: scale(1.1); /* 放大效果 */
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
 .product-title {
     margin-top: 5px; /* 照片跟標題的距離 */
     margin-bottom: 20px; /* 確保標題下還有空隙 */
@@ -1341,7 +1359,7 @@ PRODUCT
     color: #333;
     line-height: 1.5;
 }
-  
+
 .product-item {
     text-align: center; /* 確保文字居中 */
 }
@@ -1358,30 +1376,9 @@ PRODUCT
     margin-left: 20px;
 }
 
-.product-content-title {
-    margin-top: 55px;
-    margin-bottom: 40px;
-}
-
-.product-content-image {
-    width: 100%;
-    height: auto;
-    max-width: 600px; /* 設定最大寬度 */
-    margin-bottom: 20px; /* 保持與文字的距離 */
-}
-
-.product-content p {
-    font-size: 24px;
-}
-
-.product-content li {
-    font-size: 20px;
-}
-
 .scroll-offset {
     scroll-margin-top: 100px; /* Adjust the value as needed */
 }
-
 
 /* 當寬度大於992px時，保持現狀 */
 @media (min-width: 993px) {
@@ -1414,10 +1411,119 @@ PRODUCT
         width: 100%;
         margin-bottom: 20px;
     }
+}
+
+/*
+====================
+PRODUCT CONTENT
+====================
+*/
+.product-content {
+    padding: 15px;
+}
+
+.product-content-title {
+    margin-top: 55px;
+    margin-bottom: 40px;
+    font-size: 80px;
+}
+
+.product-content-image {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    max-width: 600px; /* 設定最大寬度 */
+    margin-bottom: 20px; /* 保持與底部的距離 */
+}
+
+.product-content p {
+    font-size: 30px;
+}
+
+.product-content li {
+    font-size: 28px;
+}
+
+.scroll-offset {
+    scroll-margin-top: 100px; /* Adjust the value as needed */
+}
+
+/* 響應式 */
+/* 中型設備（如平板電腦）樣式 */
+@media (max-width: 992px) {
     .product-content {
         padding: 0 15px;
     }
+
+    .product-content p {
+        font-size: 20px;
+    }
+
+    .product-content li {
+        font-size: 18px;
+    }
+
+    .product-content-title {
+        font-size: 60px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
 }
+
+@media (max-width: 768px) {
+    .product-content {
+        padding: 0 15px;
+    }
+
+    .product-content p {
+        font-size: 20px;
+    }
+
+    .product-content li {
+        font-size: 18px;
+    }
+    
+    .product-content-title {
+        font-size: 60px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .product-content-img, .content-text {
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+}
+
+
+/* 小型設備（如手機）樣式 */
+@media (max-width: 576px) {
+    .product-content-title {
+        font-size: 40px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .product-content p {
+        font-size: 20px;
+    }
+
+    .product-content li {
+        font-size: 18px;
+    }
+
+    .product-content-image {
+        width: 100%; /* 確保圖片寬度為100% */
+        max-width: none; /* 移除最大寬度限制 */
+    }
+
+    .product-content-img {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 /*
 ====================
