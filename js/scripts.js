@@ -1,8 +1,8 @@
 const burger = document.querySelector('.navbar-toggler'); // 選取漢堡圖示元素
 const nav = document.querySelector('.navbar-nav'); // 選取導航連結容器
 const navLinks = document.querySelectorAll('.navbar-nav li'); // 選取所有導航連結列表項目
-const header = document.querySelector('.navbar'); // 選取頁首元素
-const logo = document.querySelector('.navbar-logo .navbar-logo-image'); // 選取 logo 圖片元素
+const header = document.querySelectorAll('.navbar'); // 選取頁首元素
+const logo = document.getElementById('header-logo'); // 選取 logo 圖片元素
 
 (function ($) {
     "use strict";
