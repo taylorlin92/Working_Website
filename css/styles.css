@@ -1350,6 +1350,9 @@ PRODUCT
 
 .no-underline {
     text-decoration: none;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-title {
