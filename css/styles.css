@@ -1440,11 +1440,20 @@ PRODUCT CONTENT
 }
 
 .product-content p {
-    font-size: 30px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .product-content li {
     font-size: 28px;
+}
+
+.product-content h5 {
+    color: red;
+}
+
+.product-content h6 {
+    color: blue;
 }
 
 .scroll-offset {
@@ -1458,12 +1467,16 @@ PRODUCT CONTENT
         padding: 0 15px;
     }
 
+    .product-content h2 {
+        font-size: 28px;
+    }
+
     .product-content p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .product-content li {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .product-content-title {
@@ -1478,12 +1491,16 @@ PRODUCT CONTENT
         padding: 0 15px;
     }
 
+    .product-content h2 {
+        font-size: 26px;
+    }
+
     .product-content p {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .product-content li {
-        font-size: 18px;
+        font-size: 24px;
     }
     
     .product-content-title {
@@ -1499,7 +1516,6 @@ PRODUCT CONTENT
     }
 }
 
-
 /* 小型設備（如手機）樣式 */
 @media (max-width: 576px) {
     .product-content-title {
@@ -1508,12 +1524,16 @@ PRODUCT CONTENT
         margin-bottom: 20px;
     }
 
+    .product-content h2 {
+        font-size: 24px;
+    }
+
     .product-content p {
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .product-content li {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .product-content-img {
