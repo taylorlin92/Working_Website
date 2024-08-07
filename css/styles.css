@@ -260,7 +260,6 @@ NAVBAR
     }
 }
 
-
 /* 響應式設計 */
 @media screen and (min-width: 992px) {
     .navbar .dropdown:hover .dropdown-menu {
@@ -350,6 +349,7 @@ NAVBAR
         transform: translateX(-50%);
     }
 }
+
 
 
 /* 
@@ -1546,6 +1546,33 @@ PRODUCT CONTENT
         width: 30%; /* 確保圖片寬度為100% */
         height: auto;
     }
+}
+
+/*
+====================
+BACK-TO-TOP BUTTON
+====================
+*/
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: pink;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
 }
 
 

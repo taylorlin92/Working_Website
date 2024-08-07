@@ -107,5 +107,23 @@ const logo = document.getElementById('header-logo'); // 選取 logo 圖片元素
             });
         }
     });
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Adjust the scroll position threshold as needed
+                backToTopBtn.style.display = 'block';
+            } else {
+               backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scroll effect
+        });
+    });
 });
 })(window.jQuery);
