@@ -1438,13 +1438,9 @@ PRODUCT CONTENT
     margin-bottom: 20px; /* 保持與底部的距離 */
 }
 
-.product-content p {
+.product-content li {
     font-size: 20px;
     font-family: Arial, sans-serif;
-}
-
-.product-content li {
-    font-size: 28px;
 }
 
 .product-content h5 {
