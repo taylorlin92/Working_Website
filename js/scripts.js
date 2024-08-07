@@ -1,8 +1,13 @@
-const burger = document.querySelector('.navbar-toggler'); // 選取漢堡圖示元素
-const nav = document.querySelector('.navbar-nav'); // 選取導航連結容器
-const navLinks = document.querySelectorAll('.navbar-nav li'); // 選取所有導航連結列表項目
-const header = document.querySelectorAll('.navbar'); // 選取頁首元素
-const logo = document.getElementById('header-logo'); // 選取 logo 圖片元素
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-toggler'); // 選取漢堡圖示元素
+    const nav = document.querySelector('.navbar-nav'); // 選取導航連結容器
+    const navLinks = document.querySelectorAll('.navbar-nav li'); // 選取所有導航連結列表項目
+    const header = document.querySelector('.navbar'); // 選取頁首元素
+    const logo = document.querySelector('#header-logo'); // 選取 logo 圖片元素
+
+// 確認元素是否正確選擇
+console.log(header);
+console.log(logo);
 
 (function ($) {
     "use strict";
@@ -29,14 +34,15 @@ const logo = document.getElementById('header-logo'); // 選取 logo 圖片元素
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
-            logo.style.opacity = 1; // 顯示 logo
+            logo.style.opacity = '1'; // 顯示 logo
             logo.style.visibility = 'visible'; // 設置 logo 為可見
         } else {
             header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
-            logo.style.opacity = 0; // 隱藏 logo
+            logo.style.opacity = '0'; // 隱藏 logo
             logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
         }
     });
+});
 
     // Overview isotope and filter
     $(document).ready(function() {

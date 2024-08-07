@@ -77,7 +77,6 @@ NAVBAR
 .navbar-logo .navbar-logo-image {
     height: 100%;
     width: 300px; 
-    max-height: none; /* 调整这里的值来增大 LOGO 尺寸 */
     object-fit: contain; /* 確保圖片內容完整顯示 */
     padding: 0; /* 移除內邊距 */
     opacity: 0; /* 預設透明度為 0，隱藏 logo */
@@ -85,17 +84,17 @@ NAVBAR
     transition: opacity 0.5s ease, visibility 0.5s ease; /* 添加透明度和可見度變化的過渡效果 */
 }
 
+#header-logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
 .navbar.scrolled {
     background-color: white; /* 滾動後的背景顏色為白色 */
     color: black; /* 滾動後的文字顏色為黑色 */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* 滾動後加強陰影效果 */
     animation: shadowPulse 0.5s ease; /* 添加殘影動畫 */
-}
-
-#header-logo {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
 }
 
 /* 殘影動畫效果 */
