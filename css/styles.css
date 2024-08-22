@@ -1571,8 +1571,8 @@ PRODUCT CONTENT
     }
 
     .product-images img {
-        width: 100%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
-        height: 100%;
+        width: 80%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
+        height: 80%;
         object-fit: contain;
     }
 
