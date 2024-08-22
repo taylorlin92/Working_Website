@@ -1434,6 +1434,7 @@ PRODUCT CONTENT
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* 將圖片和縮略圖靠左對齊 */
+    gap: 10px;
     margin-right: 20px; /* 根據需要調整圖片與文字部分的間距 */
 }
 
@@ -1472,6 +1473,7 @@ PRODUCT CONTENT
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -35px;
 }
 
 .product-content h2 {
@@ -1502,6 +1504,10 @@ PRODUCT CONTENT
 @media (max-width: 992px) {
     .product-content {
         padding: 0 15px;
+    }
+
+    .product-images .thumbnail-container {
+        margin-left: -20px; /* 在平板電腦上減少 margin-left */
     }
 
     .product-content h2 {
@@ -1578,6 +1584,7 @@ PRODUCT CONTENT
 
     .product-images .thumbnail-container {
         width: 20vw; /* 設置固定寬度 */
+        margin-left: -10px; /* 在手機上進一步減少 margin-left */
     }
 
     .product-content h2 {
