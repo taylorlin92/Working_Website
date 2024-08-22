@@ -1639,6 +1639,30 @@ BACK-TO-TOP BUTTON
     transform: scale(1.1);
 }
 
+/* 響應式 */
+/* 中等螢幕（如平板電腦） */
+@media (max-width: 768px) {
+    #back-to-top-btn {
+        bottom: 30px;
+        right: 30px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        line-height: 45px;
+    }
+}
+
+/* 小螢幕（如手機） */
+@media (max-width: 576px) {
+    #back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+    }
+}
 
 /*
 ====================
