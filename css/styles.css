@@ -1571,7 +1571,7 @@ PRODUCT CONTENT
 /* 小型設備（如手機）樣式 */
 @media (max-width: 576px) {
     .product-content-title {
-        font-size: 20vw; /* 調整標題字體大小以適應較小屏幕 */
+        font-size: 10vw; /* 調整標題字體大小以適應較小屏幕 */
         margin-top: 30px;
         margin-bottom: 20px;
     }
