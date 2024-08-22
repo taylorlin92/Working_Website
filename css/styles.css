@@ -1571,7 +1571,12 @@ PRODUCT CONTENT
     }
 
     .product-images img {
-        width: 30vw; /* 更小屏幕時進一步增加縮略圖的相對大小 */
+        width: 100%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
+        height: auto;
+    }
+
+    .product-images .thumbnail-container {
+        width: 20vw; /* 設置固定寬度 */
     }
 
     .product-content-title {
