@@ -1565,7 +1565,7 @@ PRODUCT CONTENT
 /* 小型設備（如手機）樣式 */
 @media (max-width: 576px) {
     .product-content-title {
-        font-size: 80px;
+        font-size: 8vw; /* 調整標題字體大小以適應較小屏幕 */
         margin-top: 30px;
         margin-bottom: 20px;
     }
@@ -1580,9 +1580,6 @@ PRODUCT CONTENT
         width: 20vw; /* 設置固定寬度 */
     }
 
-    .product-content-title {
-        font-size: 6vw; /* 調整標題字體大小以適應較小屏幕 */
-    }
     .product-content h2 {
         font-size: 4vw;
     }
