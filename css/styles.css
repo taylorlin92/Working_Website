@@ -1438,7 +1438,7 @@ PRODUCT CONTENT
 }
 
 .main-product-image {
-    width: 100%;
+    width: 80%;
     margin-bottom: 10px; /* 調整主圖片與縮略圖之間的間距 */
 }
 
