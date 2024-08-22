@@ -1457,7 +1457,7 @@ PRODUCT CONTENT
 .product-images img {
     max-width: 100%;
     width: 60%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
     cursor: pointer;
     border: 2px solid transparent;
@@ -1468,7 +1468,7 @@ PRODUCT CONTENT
     width: 9vw; /* 設置固定寬度 */
     aspect-ratio: 1 / 1; /* 設置比例為1:1，使得容器保持正方形 */
     flex-shrink: 0;
-    overflow: hidden; /* 隱藏超出的圖片部分 */
+    overflow: visible; /* 確保圖片不被裁剪 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1572,7 +1572,8 @@ PRODUCT CONTENT
 
     .product-images img {
         width: 100%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
-        height: auto;
+        height: 100%;
+        object-fit: contain;
     }
 
     .product-images .thumbnail-container {
