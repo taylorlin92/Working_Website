@@ -1427,28 +1427,65 @@ PRODUCT CONTENT
 .product-content-title {
     margin-top: 55px;
     margin-bottom: 40px;
-    font-size: 80px;
+    font-size: 36px;
 }
 
-.product-content-image {
-    max-width: 100%;
-    width: 200px;
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 將圖片和縮略圖靠左對齊 */
+    margin-right: 20px; /* 根據需要調整圖片與文字部分的間距 */
+}
+
+.main-product-image {
+    width: 100%;
+    margin-bottom: 10px; /* 調整主圖片與縮略圖之間的間距 */
+}
+
+.main-product-image img {
+    width: 100%;
     height: auto;
-    max-width: 600px; /* 設定最大寬度 */
-    margin-bottom: 20px; /* 保持與底部的距離 */
+    object-fit: contain;
+}
+
+.product-images {
+    display: flex;
+    justify-content: flex-start; /* 確保縮略圖靠左對齊 */
+    gap: 5px; /* 控制縮略圖之間的間距 */
+}
+
+.product-images img {
+    width: 60%;
+    height: 100px;
+    object-fit: contain;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.product-images .thumbnail-container {
+    width: 6vw; /* 設置固定寬度 */
+    aspect-ratio: 1 / 1; /* 設置比例為1:1，使得容器保持正方形 */
+    flex-shrink: 0;
+    overflow: hidden; /* 隱藏超出的圖片部分 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-content li {
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial, sans-serif;
 }
 
 .product-content h5 {
     color: red;
+    font-size: 20px; /* 將 h5 標題字體大小設置為20px */
 }
 
 .product-content h6 {
     color: blue;
+    font-size: 18px; /* 將 h6 標題字體大小設置為18px */
 }
 
 .scroll-offset {
@@ -1486,22 +1523,31 @@ PRODUCT CONTENT
         padding: 0 15px;
     }
 
-    .product-content h2 {
-        font-size: 26px;
+    .product-images img {
+        width: 25%; /* 小屏幕時增加縮略圖的相對大小 */
     }
 
-    .product-content p {
-        font-size: 14px;
+    .product-images .thumbnail-container {
+        width: 8vw; /* 在較小螢幕上增加縮略圖的相對大小 */
     }
 
-    .product-content li {
-        font-size: 24px;
-    }
-    
     .product-content-title {
-        font-size: 60px;
-        margin-top: 40px;
-        margin-bottom: 30px;
+        font-size: 6vw; /* 調整標題字體大小以適應較小屏幕 */
+    }
+    .product-content h2 {
+        font-size: 5vw;
+    }
+    .product-content h3 {
+        font-size: 4vw;
+    }
+    .product-content li {
+        font-size: 3.5vw;
+    }
+    .product-content h5 {
+        font-size: 4vw;
+    }
+    .product-content h6 {
+        font-size: 3.5vw;
     }
 
     .product-content-img, .content-text {
@@ -1519,18 +1565,33 @@ PRODUCT CONTENT
         margin-bottom: 20px;
     }
 
+    .product-images img {
+        width: 30%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
+    }
+
+    .product-images .thumbnail-container {
+        width: 9.5vw; /* 在更小螢幕上進一步增加縮略圖的相對大小 */
+    }
+}
+
+    .product-content-title {
+        font-size: 6vw; /* 調整標題字體大小以適應較小屏幕 */
+    }
     .product-content h2 {
-        font-size: 24px;
+        font-size: 4vw;
     }
-
-    .product-content p {
-        font-size: 12px;
+    .product-content h3 {
+        font-size: 3vw;
     }
-
     .product-content li {
-        font-size: 24px;
+        font-size: 2.5vw;
     }
-
+    .product-content h5 {
+        font-size: 3vw;
+    }
+    .product-content h6 {
+        font-size: 2.5vw;
+    }
     .product-content-img {
         padding-left: 0;
         padding-right: 0;
@@ -1542,6 +1603,7 @@ PRODUCT CONTENT
         height: auto;
     }
 }
+
 
 /*
 ====================

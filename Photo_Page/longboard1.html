@@ -27,6 +27,18 @@
         <link href="../css/styles.css" rel="stylesheet" >
     </head>
 
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            display: flex;
+            align-items: flex-start; /* 確保圖片部分與文字部分頂部對齊 */
+        }
+    </style>
+
     <body>
         <!--Navbar Starts-->
         <header>
@@ -133,17 +145,38 @@
                     <div class="container">
                         <h1 class="product-content-title">Longboards</h1>
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 product-content-img">
-                                <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Longboard 1" class="product-content-image">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="product-container">
+                                    <div class="main-product-image">
+                                        <img id="mainImage" src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Main Product Image">
+                                    </div>
+                                    <div class="product-images">
+                                        <div class="thumbnail-container">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/PennyBoard_1.jpg" alt="Image 1" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/PennyBoard_1.jpg')">
+                                        </div>
+                                        <div class="thumbnail-container">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Image 2" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg')">
+                                        </div>
+                                        <div class="thumbnail-container">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Image 3" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg')">
+                                        </div>
+                                        <div class="thumbnail-container">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Image 4" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg')">
+                                        </div>
+                                        <div class="thumbnail-container">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Image 5" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg')">
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-8 col-sm-6">
+                            <div class="col-md-6 col-sm-12">
                                 <h2>Material & Spec Information:</h2>
                                 <h3>---------------------------------------------------------------</h3>
                                 <ul>
                                     <li>Material: Polycarbonate</li>
                                     <li>Dimension: 23"</li>
                                     <li>Trucks: 5V Regular Base; Butterfly Base; Seagull Base</li>
-                                    <li>Wheels: PU Cast; PU Injection 
+                                    <li>Wheels: PU Cast; PU Injection </li>
                                     <li>Bearings: ABEC-3; ABEC-5; ABEC-7; ABEC-9
                                         <br>&nbsp;- Material: Carbon Steel
                                     </li>
@@ -247,6 +280,12 @@
             window.location.href = this.getAttribute('href');
             }
         });
+
+        // 縮圖點到相對應的圖片
+        function changeImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageSrc;
+        }
         </script>
         <!--End Of Java Script-->
     </body>
