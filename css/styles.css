@@ -1427,7 +1427,7 @@ PRODUCT CONTENT
 .product-content-title {
     margin-top: 55px;
     margin-bottom: 40px;
-    font-size: 36px;
+    font-size: 50px;
 }
 
 .product-container {
@@ -1455,8 +1455,9 @@ PRODUCT CONTENT
 }
 
 .product-images img {
+    max-width: 100%;
     width: 60%;
-    height: 100px;
+    height: auto;
     object-fit: contain;
     cursor: pointer;
     border: 2px solid transparent;
@@ -1464,7 +1465,7 @@ PRODUCT CONTENT
 }
 
 .product-images .thumbnail-container {
-    width: 6vw; /* 設置固定寬度 */
+    width: 9vw; /* 設置固定寬度 */
     aspect-ratio: 1 / 1; /* 設置比例為1:1，使得容器保持正方形 */
     flex-shrink: 0;
     overflow: hidden; /* 隱藏超出的圖片部分 */
@@ -1473,19 +1474,23 @@ PRODUCT CONTENT
     justify-content: center;
 }
 
+.product-content h2 {
+    font-size: 35px; 
+}
+
 .product-content li {
-    font-size: 18px;
+    font-size: 26px;
     font-family: Arial, sans-serif;
 }
 
 .product-content h5 {
     color: red;
-    font-size: 20px; /* 將 h5 標題字體大小設置為20px */
+    font-size: 25px; /* 將 h5 標題字體大小設置為20px */
 }
 
 .product-content h6 {
     color: blue;
-    font-size: 18px; /* 將 h6 標題字體大小設置為18px */
+    font-size: 22px; /* 將 h6 標題字體大小設置為18px */
 }
 
 .scroll-offset {
@@ -1503,12 +1508,16 @@ PRODUCT CONTENT
         font-size: 28px;
     }
 
+    .product-content h3 {
+        font-size: 20px;
+    }
+
     .product-content p {
         font-size: 18px;
     }
 
     .product-content li {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .product-content-title {
@@ -1525,10 +1534,6 @@ PRODUCT CONTENT
 
     .product-images img {
         width: 25%; /* 小屏幕時增加縮略圖的相對大小 */
-    }
-
-    .product-images .thumbnail-container {
-        width: 8vw; /* 在較小螢幕上增加縮略圖的相對大小 */
     }
 
     .product-content-title {
@@ -1566,13 +1571,8 @@ PRODUCT CONTENT
     }
 
     .product-images img {
-        width: 30%; /* 更小屏幕時進一步增加縮略圖的相對大小 */
+        width: 30vw; /* 更小屏幕時進一步增加縮略圖的相對大小 */
     }
-
-    .product-images .thumbnail-container {
-        width: 9.5vw; /* 在更小螢幕上進一步增加縮略圖的相對大小 */
-    }
-}
 
     .product-content-title {
         font-size: 6vw; /* 調整標題字體大小以適應較小屏幕 */
@@ -1603,6 +1603,7 @@ PRODUCT CONTENT
         height: auto;
     }
 }
+
 
 
 /*
