@@ -136,20 +136,20 @@
                             <div class="col-md-6 col-sm-12">
                                 <div class="product-container">
                                     <div class="main-product-image">
-                                        <img id="mainImage" src="../images/Product_Photos/Skateboards/Boards/Longboard_4.jpg" alt="Main Product Image">
+                                        <img id="mainImage" src="../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_back.JPG" alt="Main Product Image">
                                     </div>
                                     <div class="product-images">
                                         <div class="thumbnail-container">
-                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_1.jpg" alt="Image 1" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/PennyBoard_1.jpg')">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_back.JPG" alt="Image 1" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_back.JPG')">
                                         </div>
                                         <div class="thumbnail-container">
-                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_2.jpg" alt="Image 2" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_2.jpg')">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_front.jpg" alt="Image 2" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_front.jpg')">
                                         </div>
                                         <div class="thumbnail-container">
-                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_3.jpg" alt="Image 3" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_3.jpg')">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_trucks.jpg" alt="Image 3" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_trucks.jpg')">
                                         </div>
                                         <div class="thumbnail-container">
-                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_4.jpg" alt="Image 4" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_4.jpg')">
+                                        <img src="../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_wheels.JPG" alt="Image 4" onclick="changeImage('../images/Product_Photos/Skateboards/Boards/Longboard_4/Longboard_4_wheels.JPG')">
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +161,7 @@
                                     <li>Material: Polycarbonate</li>
                                     <li>Dimension: 23"</li>
                                     <li>Trucks: 5V Regular Base; Butterfly Base; Seagull Base</li>
-                                    <li>Wheels: PU Cast; PU Injection 
+                                    <li>Wheels: PU Cast; PU Injection </li>
                                     <li>Bearings: ABEC-3; ABEC-5; ABEC-7; ABEC-9
                                         <br>&nbsp;- Material: Carbon Steel
                                     </li>
@@ -265,6 +265,12 @@
             window.location.href = this.getAttribute('href');
             }
         });
+
+        // 縮圖點到相對應的圖片
+        function changeImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageSrc;
+        }
         </script>
         <!--End Of Java Script-->
     </body>

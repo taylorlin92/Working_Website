@@ -161,7 +161,7 @@
                                     <li>Deck Material: Polycarbonate</li>
                                     <li>Dimension: 23"</li>
                                     <li>Trucks: Aluminum base; Polished</li>
-                                    <li>Wheels: PU Cast; PU Injection 
+                                    <li>Wheels: PU Cast; PU Injection </li>
                                     <li>Bearings: ABEC-3; ABEC-5; ABEC-7; ABEC-9
                                         <br>&nbsp;- Material: Carbon Steel</li>
                                     <li>Bushings: PU Cast; PU Injection</li>
@@ -264,6 +264,12 @@
             window.location.href = this.getAttribute('href');
             }
         });
+
+        // 縮圖點到相對應的圖片
+        function changeImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageSrc;
+        }
         </script>
         <!--End Of Java Script-->
     </body>
