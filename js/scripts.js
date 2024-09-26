@@ -103,7 +103,7 @@ console.log(logo);
 
         // 檢查目標元素是否存在
         if (targetElement) {
-            const navbarHeight = 100px;
+            const navbarHeight = 100;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
