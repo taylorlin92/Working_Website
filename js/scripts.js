@@ -63,7 +63,6 @@ console.log(logo);
         });
     });
 
-
     // CUSTOM LINK
     $('.smoothscroll').click(function(){
         var el = $(this).attr('href');
@@ -103,7 +102,7 @@ console.log(logo);
 
         // 檢查目標元素是否存在
         if (targetElement) {
-            const navbarHeight = 100;
+            const navbarHeight = 100px;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
