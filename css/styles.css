@@ -2048,7 +2048,7 @@ FOOTER
 }
 
 .white-logo-image {
-    max-width: 100%; /* 确保图片不会超出其父容器的宽度 */
+    max-width: 50%; /* 确保图片不会超出其父容器的宽度 */
     height: auto; /* 确保图片高度自动调整以保持比例 */
     transition: transform 0.2s; /* 添加放大效果的过渡 */
     padding-top: 10px;
@@ -2075,7 +2075,7 @@ FOOTER
 
 .footer-menu li {
     list-style: none; /* 移除默認列表樣式 */
-    margin: 0 50px; /* 設置列表项間距 */
+    margin: 0 10px; /* 設置列表项間距 */
 }
 
 .footer-menu a:hover {
@@ -2201,7 +2201,7 @@ h1.contact-us-title {
     }
 
     .white-logo-image {
-        max-width: 70%; /* 确保在小屏幕上缩小 */
+        max-width: 40%; /* 确保在小屏幕上缩小 */
     }
 
     h1.contact-us-title {
