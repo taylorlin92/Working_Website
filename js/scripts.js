@@ -44,25 +44,6 @@ console.log(logo);
     });
 });
 
-    // Overview isotope and filter
-    $(document).ready(function() {
-    // Initialize Isotope
-        var $grid = $('.overview-container').isotope({
-         itemSelector: '.overview-item',
-            layoutMode: 'fitRows'
-        });
-
-    // Filter items on button click
-    $('#overview-filters').on('click', 'li', function() {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-
-    // Change active class
-        $('#overview-filters li').removeClass('active');
-        $(this).addClass('active');
-        });
-    });
-
     // CUSTOM LINK
     $('.smoothscroll').click(function(){
         var el = $(this).attr('href');

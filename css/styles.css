@@ -1941,6 +1941,16 @@ CONTACT
 .contact-page .right-content #map {
     margin-bottom: 20px;
 }
+
+.contact-info {
+        text-decoration: none;
+        color: black; 
+    }
+    
+.contact-info:hover {
+        color: var(--link-hover-color);;
+        text-decoration: underline;
+    }
   
 .contact-page .left-text form input {
     width: 100%;
