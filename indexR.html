@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yokotex Co., Ltd. - Coming Soon Page</title>
+    
+        <!-- Favicon 網址旁邊的圖案 -->
+        <link href="img/favicon.ico" rel="icon">
+    
+        <!-- Google Web Fonts 網站用的字體 -->                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        
+        <!-- Libraries Stylesheet 特效功能-->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">   
+        <link href="lib/vegas/vegas.min.css" rel="stylesheet"> 
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" > 
+    
+        <!-- Template Stylesheet -->
+        <link href="css/styles-comingsoon.css" rel="stylesheet" >
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Coming Soon</h1>
+            <p>We are working hard to bring you something amazing! Stay tuned.</p>
+            <div id="countdown" class="countdown"></div>
+        </div>
+            
+        <script>
+        // Countdown timer
+            const countdown = () => {
+            const launchDate = new Date("Jan 1, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = "We're Live!";
+                }
+            };
+            
+                const timer = setInterval(countdown, 1000);
+        </script>
+    </body>
+
+</html>
