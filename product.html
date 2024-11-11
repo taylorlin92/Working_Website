@@ -25,6 +25,16 @@
     
         <!-- Template Stylesheet -->
         <link href="css/styles.css" rel="stylesheet" >
+
+        <style>
+            /* 禁止所有內容選取 */
+            body {
+                -webkit-user-select: none; /* 禁止 Chrome, Safari */
+                -moz-user-select: none;    /* 禁止 Firefox */
+                -ms-user-select: none;     /* 禁止 Internet Explorer */
+                user-select: none;         /* 通用設置 */
+            }
+        </style>
     </head>
 
     <body>
@@ -198,8 +208,8 @@
                                 <div class="col-lg-4 col-sm-4 wow fadeInUp product-item" data-wow-delay="0.1s">
                                     <a href="Photo_Page/longboard1.html" class="no-underline">
                                         <img src="images/Product_Photos/Skateboards/Boards/Longboard_1/Longboard_1.jpg" alt="Longboard 1" class="product-image">
+                                        <p class="product-title">Longboard</p>
                                     </a>
-                                    <p class="product-title">Longboard</p>
                                 </div>
                                 <div class="col-lg-4 col-sm-4 wow fadeInUp product-item" data-wow-delay="0.1s">
                                     <a href="Photo_Page/longboard2.html" class="no-underline">
@@ -833,12 +843,12 @@
                                                             <p class="product-title">Aluminum Waterski Wings (Black Anodized)</p>
                                                         </a>
                                                     </div>
-                                                    <div class="col-lg-4 col-sm-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s">
+                                                <!-- <div class="col-lg-4 col-sm-4 wow fadeInUp product-item more-item" data-wow-delay="0.1s">
                                                         <a href="Photo_Page/waterskifin3.html" class="no-underline">
                                                             <img src="images/Product_Photos/Waterski_Fins/Wings.jpg" alt="Waterski Fin 4" class="product-image">
                                                             <p class="product-title">Aluminum Waterski Wings (Black Anodized)</p>
                                                         </a>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <button class="btn btn-primary more-btn" onclick="toggleMoreProducts(this)">More</button>
                                             </section>
@@ -904,7 +914,9 @@
                     </div>
                     <!--Footer 中間部份-->
                     <div class="middle col-lg-4 col-12 text-center mx-auto">
-                        <img src="../images/Logo/LOGO_Invert.png" alt="Taylor Logo" class="white-logo-image img-fluid">
+                        <a href="index.html">
+                            <img src="../images/Logo/LOGO_Invert.png" alt="Taylor Logo" class="white-logo-image img-fluid">
+                            </a>
                         <ul class="footer-menu" style="margin-top: 15px;">
                             <li><a class="btn btn-link" href="./about.html">ABOUT</a></li>
                             <li><a class="btn btn-link" href="./news.html">NEWS</a></li>

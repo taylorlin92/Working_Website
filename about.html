@@ -25,6 +25,16 @@
     
         <!-- Template Stylesheet -->
         <link href="css/styles.css" rel="stylesheet" >
+
+        <style>
+            /* 禁止所有內容選取 */
+            body {
+                -webkit-user-select: none; /* 禁止 Chrome, Safari */
+                -moz-user-select: none;    /* 禁止 Firefox */
+                -ms-user-select: none;     /* 禁止 Internet Explorer */
+                user-select: none;         /* 通用設置 */
+            }
+        </style>
     </head>
 
     <body>
@@ -83,7 +93,7 @@
                 <div class="intro-container">
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                            <img src="images/Logo/LOGO_Invert.png" alt="Taylor Logo" class="img-fluid logo">
+                            <img src="images/Logo/LOGO_Invert.png" alt="Taylor Logo" class="img-fluid logo" style=" pointer-events: none; /* 禁止滑鼠事件 */">
                         </div>
                         <div class="col-md-6">
                             <div class="intro-content">
@@ -226,7 +236,9 @@
                     </div>
                     <!--Footer 中間部份-->
                     <div class="middle col-lg-4 col-12 text-center mx-auto">
+                        <a href="index.html">
                         <img src="../images/Logo/LOGO_Invert.png" alt="Taylor Logo" class="white-logo-image img-fluid">
+                        </a>
                         <ul class="footer-menu" style="margin-top: 15px;">
                             <li><a class="btn btn-link" href="./about.html">ABOUT</a></li>
                             <li><a class="btn btn-link" href="./news.html">NEWS</a></li>
@@ -289,6 +301,11 @@
                 window.location.href = 'product.html';
                 }
         });
+
+        //禁制被下載
+        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // 禁止右鍵功能
+    });
 
         </script>
         <!--End Of Java Script-->
