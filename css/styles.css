@@ -634,7 +634,8 @@ Overivew
 
 @media (max-width: 768px) {
     .overview-item {
-        width: calc(80% - 20px); /* Adjust for smaller smaller screens */
+        width: calc(100% - 20px); /* Adjust for smaller smaller screens */
+        margin-bottom: 20x;
     }
 
     .overview-container {
