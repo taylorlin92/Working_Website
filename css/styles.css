@@ -39,7 +39,7 @@ OVERALL
 body {
     width: 100vw;
     font-family: 'Impact', fantasy; /* 設定全局字體 */
-    background-color: #f4f4f4; /* 設定背景顏色 */
+    background-color: #ffffff; /* 設定背景顏色 */
     color: #333; /* 設定文字顏色 */
     display: flex; /* 使用flex佈局 */
     flex-direction: column; /* 垂直排列子元素 */
