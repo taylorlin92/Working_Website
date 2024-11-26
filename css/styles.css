@@ -1061,9 +1061,16 @@ PRODUCT SIDEBAR
     font-weight: bold; /* 可選：增加字體粗細 */
 }
 
-.sublinks {
-    list-style-type: none;
-    padding-left: 15px;
+.level2 {
+    display: flex;
+    flex-direction: column; /* 保持子菜單堆疊顯示 */
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 讓內容靠左，移除兩端對齊 */
 }
 
 .toggle-btn {
@@ -1073,7 +1080,46 @@ PRODUCT SIDEBAR
     cursor: pointer;
     font-size: 18px;
     line-height: 1;
-    margin-left: 10px;
+    margin-left: 98px; /* 可選：額外微調 + 與文字之間的距離 */
+}
+
+.toggle-btn1 {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 48px; /* 可選：額外微調 + 與文字之間的距離 */
+}
+
+.sublinks {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.sublinks1 {
+    list-style-type: none; /* 移除項目符號 */
+    padding-left: 20px; /* 添加內邊距 */
+    margin: 0;
+    background-color: transparent; /* 子菜單背景色 */
+    display: none; /* 默認隱藏 */
+    overflow: hidden; /* 隱藏高度變化過程中的內容 */
+    transition: height 0.3s ease; /* 添加動畫效果 */
+}
+
+.sublinks1 li {
+    margin: 5px 0; /* 增加項目間距 */
+}
+
+.sublinks1 a {
+    text-decoration: none; /* 移除下劃線 */
+    color: #333;
+}
+
+.level2.open .sublinks1 {
+    display: block; /* 顯示子菜單 */
+    height: auto;
 }
 
 .site-nav:hover {

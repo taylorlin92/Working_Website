@@ -96,11 +96,13 @@
                             <li class="level2"><a href="#surfskateboards" class="site-nav">Surfskateboards</a></li>
                             <li class="level2"><a href="#trickboards" class="site-nav">Trickboards</a></li>
                             <li class="level2 sub-level sub-sub-level">
+                                <div class="menu-item">
                                 <a href="#accessories" class="site-nav">
                                     Accessories
-                                <button class="toggle-btn" onclick="toggleSubLinks(this, event)">+</button>
                                 </a>
-                                <ul class="sublinks mb-0" style="display: none;">
+                                <button class="toggle-btn" onclick="toggleSubLinks(this, event)">+</button>
+                                </div>
+                                <ul class="sublinks1 mb-0" style="display: none;">
                                     <li class="level3"><a href="#bearings" class="site-nav">Bearings</a></li>
                                     <li class="level3"><a href="#bushings" class="site-nav">Bushings</a></li>
                                     <li class="level3"><a href="#trucks" class="site-nav">Trucks</a></li>
@@ -115,11 +117,13 @@
                             <li class="level2"><a href="#hardwaretools" class="site-nav">Hardware Tools</a></li>
                             <li class="level2"><a href="#leasheslocks" class="site-nav">Leashes & Locks</a></li>
                             <li class="level2 sub-level sub-sub-level">
+                                <div class="menu-item">
                                 <a href="#stomppads" class="site-nav">
                                     Traction Stomp Pad
-                                    <button class="toggle-btn" onclick="toggleSubLinks(this, event)">+</button>
                                 </a>
-                                <ul class="sublinks mb-0" style="display: none;">
+                                    <button class="toggle-btn1" onclick="toggleSubLinks(this, event)">+</button>
+                            </div>
+                                <ul class="sublinks1 mb-0" style="display: none;">
                                     <li class="level3"><a href="#aluminummetal" class="site-nav">Aluminum & Metal</a></li>
                                     <li class="level3"><a href="#polycarbonate" class="site-nav">PC</a></li>
                                     <li class="level3"><a href="#polyurethane" class="site-nav">PU</a></li>
@@ -973,18 +977,38 @@
 
         //Side Menu點＋號下單菜單出來
         function toggleSubLinks(button, event) {
-            event.preventDefault(); // 阻止 <a> 元素的默認行為
-                
-                const subLinks = button.parentElement.nextElementSibling;
-                const isVisible = subLinks.style.display === "block";
-                
-                // Toggle the display of the sub-links
-                subLinks.style.display = isVisible ? "none" : "block";
-    
-                // Change the button text
-                button.textContent = isVisible ? "+" : "-";
+            event.stopPropagation(); // 防止事件冒泡
+            event.preventDefault(); // 阻止默認行為
+
+            const parent = button.closest('.level2'); // 找到父級 .level2
+            const subLinks = parent.querySelector('.sublinks1'); // 找到對應的子菜單
+
+            // 顯示或隱藏子菜單
+            if (subLinks.style.display === "block") {
+                hideSubLinks(subLinks, button); // 隱藏子菜單
+            } else {
+                showSubLinks(subLinks, button); // 顯示子菜單
+            }
+
+            // 添加鼠標移開事件
+            subLinks.addEventListener('mouseleave', () => hideSubLinks(subLinks, button));
         }
 
+        function showSubLinks(subLinks, button) {
+            subLinks.style.display = "block";
+            subLinks.style.height = subLinks.scrollHeight + "px"; // 動態設置高度
+            button.textContent = "-"; // 切換按鈕文字
+        }
+
+        function hideSubLinks(subLinks, button) {
+            subLinks.style.height = "0"; // 高度設置為 0
+            setTimeout(() => {
+                subLinks.style.display = "none"; // 動畫完成後隱藏
+            }, 300); // 與 CSS 的動畫時間一致
+            button.textContent = "+"; // 恢復按鈕文字
+        
+        }
+        
         // Ｍore Button for products
         function toggleMoreProducts(button) {
             var productList = button.previousElementSibling;
