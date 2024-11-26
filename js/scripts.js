@@ -70,31 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.site-nav1').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
-        const fullHref = this.getAttribute('href'); // 取得完整的 href
-        const [pagePath, targetId] = fullHref.split('#'); // 分離頁面與 ID 部分
-        const currentPath = window.location.pathname.split('/').pop(); // 當前頁面
-
-        if (pagePath && currentPath !== pagePath) {
-        // 如果不在同一頁面，跳轉到目標頁面
-            window.location.href = fullHref;
-        } else {
-            // 如果在同一頁面，平滑滾動到目標
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                const navbarHeight = 100; // 調整為你的 navbar 高度
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-            });
-        }
-    }
-});
-});
-
+    
+            const fullHref = this.getAttribute('href'); // 獲取完整 href
+            const [pagePath, targetId] = fullHref.split('#'); // 分離頁面與區塊 ID
+    
+            // 加入 URL 參數 scrollTo
+            const newUrl = `${pagePath}?scrollTo=${targetId}`;
+            window.location.href = newUrl; // 跳轉到新 URL
+        });
+    });
+    
     // 使用 jQuery 實現其他邏輯
     (function ($) {
         "use strict";
