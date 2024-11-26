@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // 綁定平滑滾動功能
+    smoothScroll('.btn-square1');
     smoothScroll('.dropdown-item');
     smoothScroll('.carousel-link');
     smoothScroll('.site-nav');
