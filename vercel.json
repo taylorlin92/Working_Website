@@ -5,5 +5,12 @@
       "source": "/:path*.html",
       "destination": "/:path*"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.yokotex.com/$1",
+      "permanent": true
+    }
   ]
 }
