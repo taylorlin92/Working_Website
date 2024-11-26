@@ -1,3 +1,22 @@
+// Function to dynamically add JSON-LD structured data
+function addJsonLdStructuredData() {
+    const jsonLdScript = document.createElement('script');
+    jsonLdScript.type = 'application/ld+json';
+    jsonLdScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Yokotex Co., Ltd.",
+        "image": "https://yokotex.com/images/Logo/Logo.PNG",
+        "url": "https://yokotex.com"
+    });
+
+    // Append the script to the <head> section
+    document.head.appendChild(jsonLdScript);
+}
+
+// Call the function to add the JSON-LD
+addJsonLdStructuredData();
+
 document.addEventListener('DOMContentLoaded', () => {
     // 選取 DOM 元素
     const burger = document.querySelector('.navbar-toggler');
