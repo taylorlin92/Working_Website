@@ -49,6 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        //Carousel平滑跳去product.html的指定地方
+        document.querySelectorAll('.carousel-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                const fullHref = this.getAttribute('href'); // 獲取完整 href
+                const [pagePath, targetId] = fullHref.split('#'); // 分離頁面與區塊 ID
+        
+                // 加入 URL 參數 scrollTo
+                const newUrl = `${pagePath}?scrollTo=${targetId}`;
+                window.location.href = newUrl; // 跳轉到新 URL
+            });
+        });
+
     // 平滑滾動到指定部分
     document.querySelectorAll('.site-nav').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
