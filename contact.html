@@ -215,46 +215,6 @@
         <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
 
-        // LOGO on NAVBAR
-        document.addEventListener('DOMContentLoaded', () => {
-            const burger = document.querySelector('.navbar-toggler'); // 選取漢堡圖示元素
-            const nav = document.querySelector('.navbar-nav'); // 選取導航連結容器
-            const navLinks = document.querySelectorAll('.navbar-nav li'); // 選取所有導航連結列表項目
-            const header = document.querySelector('.navbar'); // 選取頁首元素
-            const logo = document.querySelector('#header-logo'); // 選取 logo 圖片元素
-
-        // 確認元素是否正確選擇
-        console.log(header);
-        console.log(logo);
-
-        // 檢查 logo 是否存在
-        if (logo) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
-                    logo.style.opacity = '1'; // 顯示 logo
-                    logo.style.visibility = 'visible'; // 設置 logo 為可見
-                } else {
-                    header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
-                    logo.style.opacity = '0'; // 隱藏 logo
-                    logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
-                }
-            });
-        }
-
-        burger.addEventListener('click', () => {
-            nav.classList.toggle('active'); // 切換導航連結容器的顯示狀態
-
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                   link.style.animation = ''; // 如果有動畫，則清除動畫
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; // 設置動畫效果
-                }
-            });
-        });
-    });
-
         // JavaScript 用于在点击 "Product" 时跳转到 product.html
         document.querySelector('#navbarDropdown').addEventListener('click', function(e) {
             if (!e.target.closest('.dropdown-menu')) {

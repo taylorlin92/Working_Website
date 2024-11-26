@@ -1002,6 +1002,15 @@ PRODUCT SIDEBAR
     flex-shrink: 0; /* 避免縮放 */
 }
 
+.side-nav1 {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-top: 80px; /* 使Sidebar位置比Navbar低 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    flex-shrink: 0; /* 避免縮放 */
+}
+
 /* Sidebar 樣式調整 */
 .sidebar-title h2 {
     margin: 0;
@@ -1028,7 +1037,14 @@ PRODUCT SIDEBAR
     align-items: center;
 }
 
-.side-nav .site-nav {
+.site-nav {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    padding: 5px 20px;
+}
+
+.site-nav1 {
     font-size: 1rem;
     font-weight: 600;
     color: #333;
@@ -1036,6 +1052,11 @@ PRODUCT SIDEBAR
 }
 
 .sidebar_categories .lvl-1 > a.site-nav {
+    font-size: 1.4rem; /* 調整這裡的數值來設定所需的字體大小 */
+    font-weight: bold; /* 可選：增加字體粗細 */
+}
+
+.sidebar_categories .lvl-1 > a.site-nav1 {
     font-size: 1.4rem; /* 調整這裡的數值來設定所需的字體大小 */
     font-weight: bold; /* 可選：增加字體粗細 */
 }
@@ -1055,10 +1076,30 @@ PRODUCT SIDEBAR
     margin-left: 10px;
 }
 
-.side-nav .site-nav:hover {
+.site-nav:hover {
     background-color: transparent;
     color: var(--link-hover-color);
     text-decoration: underline;
+}
+
+.site-nav1:hover {
+    background-color: transparent;
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* 子連結的樣式（.level2 和 .level3） */
+.sublinks a {
+    font-weight: 300; /* 設定細體 */
+    font-size: 1rem; /* 可選：保持適合的字體大小 */
+    color: #333; /* 可選：文字顏色 */
+    font-family: 'Arial', sans-serif; /* 保證字體支持細體效果 */
+}
+
+/* 如果還有多層嵌套，可以再細分 */
+.sublinks .level2 a {
+    font-size: 0.9rem; /* 更小一點的字體大小 */
+    font-weight: 300; /* 設為細體 */
 }
 
 /* 當寬度小於992px時的樣式 */
@@ -1078,7 +1119,23 @@ PRODUCT SIDEBAR
         order: 1;
     }
 
+    .side-nav1 {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+        box-shadow: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        order: 1;
+    }
+
     .side-nav .sidebar-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .side-nav1 .sidebar-title {
         width: 100%;
         text-align: center;
     }
@@ -1089,7 +1146,19 @@ PRODUCT SIDEBAR
         justify-content: space-around;
     }
 
+    .side-nav1 .sidebar_categories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
     .side-nav .sidebar_categories li {
+        flex: 1 1 45%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .side-nav1 .sidebar_categories li {
         flex: 1 1 45%;
         text-align: center;
         margin: 10px 0;

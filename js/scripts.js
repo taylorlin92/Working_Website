@@ -5,107 +5,123 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.navbar'); // 選取頁首元素
     const logo = document.querySelector('#header-logo'); // 選取 logo 圖片元素
 
-(function ($) {
-    "use strict";
-  
-    // NAVBAR
-    $('.navbar-collapse a').on('click', function () {
-      $(".navbar-collapse").collapse('hide');
-    });
 
-    // 點擊漢堡圖示時的事件處理
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('active'); // 切換導航連結容器的顯示狀態
-
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''; // 如果有動畫，則清除動畫
+    // 確保 LOGO 動畫滾動功能有效
+    if (header && logo) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
+                logo.style.opacity = '1'; // 顯示 logo
+                logo.style.visibility = 'visible'; // 設置 logo 為可見
             } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`; // 設置動畫效果
+                header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
+                logo.style.opacity = '0'; // 隱藏 logo
+                logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
             }
         });
-    });
+    }
+    // 點擊漢堡圖示時的事件處理
+    if (burger) {
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
 
-    // 滾動頁面時的事件處理
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled'); // 如果滾動距離超過50px，添加scrolled類別
-            logo.style.opacity = '1'; // 顯示 logo
-            logo.style.visibility = 'visible'; // 設置 logo 為可見
-        } else {
-            header.classList.remove('scrolled'); // 如果滾動距離小於50px，移除scrolled類別
-            logo.style.opacity = '0'; // 隱藏 logo
-            logo.style.visibility = 'hidden'; // 設置 logo 為隱藏
-        }
-    });
-});
-
-    // CUSTOM LINK
-    $('.smoothscroll').click(function(){
-        var el = $(this).attr('href');
-        var elWrapped = $(el);
-        var header_height = $('.navbar').height() + 60;
-
-        scrollToDiv(elWrapped,header_height);
-        return false;
-
-        function scrollToDiv(element,navheight){
-        var offset = element.offset();
-        var offsetTop = offset.top;
-        var totalScroll = offsetTop-navheight;
-
-        $('body,html').animate({
-        scrollTop: totalScroll
-        }, 200);
-        }
-    });
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+    }
 
     // 平滑滾動到指定部分
     document.querySelectorAll('.site-nav').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-        // 移除選中樣式
-        document.querySelectorAll('.site-nav').forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // 添加選中樣式
-        this.classList.add('active');
-
-        // 滾動到目標位置
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        // 檢查目標元素是否存在
-        if (targetElement) {
-            const navbarHeight = 100px;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+            // 移除選中樣式
+            document.querySelectorAll('.site-nav').forEach(link => {
+                link.classList.remove('active');
             });
-        }
-    });
 
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('back-to-top-btn');
+            // 添加選中樣式
+            this.classList.add('active');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { // Adjust the scroll position threshold as needed
-                backToTopBtn.style.display = 'block';
-            } else {
-               backToTopBtn.style.display = 'none';
+            // 滾動到目標位置
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // 檢查目標元素是否存在
+            if (targetElement) {
+                const navbarHeight = 100; // 使用有效的數字
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Smooth scroll effect
-        });
     });
+
+    //Photo_Page頁面的side-bar要平滑跳去product.html的指定地方
+    document.querySelectorAll('.site-nav1').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+        const fullHref = this.getAttribute('href'); // 取得完整的 href
+        const [pagePath, targetId] = fullHref.split('#'); // 分離頁面與 ID 部分
+        const currentPath = window.location.pathname.split('/').pop(); // 當前頁面
+
+        if (pagePath && currentPath !== pagePath) {
+        // 如果不在同一頁面，跳轉到目標頁面
+            window.location.href = fullHref;
+        } else {
+            // 如果在同一頁面，平滑滾動到目標
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const navbarHeight = 100; // 調整為你的 navbar 高度
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+            });
+        }
+    }
 });
-})(window.jQuery);
+});
+
+    // 使用 jQuery 實現其他邏輯
+    (function ($) {
+        "use strict";
+      
+        // NAVBAR
+        $('.navbar-collapse a').on('click', function () {
+            $(".navbar-collapse").collapse('hide');
+        });
+
+        // 自定義平滑滾動邏輯
+        $('.smoothscroll').click(function () {
+            var el = $(this).attr('href');
+            var elWrapped = $(el);
+            var header_height = $('.navbar').height() + 60;
+
+            scrollToDiv(elWrapped, header_height);
+            return false;
+
+            function scrollToDiv(element, navheight) {
+                var offset = element.offset();
+                var offsetTop = offset.top;
+                var totalScroll = offsetTop - navheight;
+
+                $('body,html').animate({
+                    scrollTop: totalScroll
+                }, 200);
+            }
+        });
+    })(window.jQuery);
+});
