@@ -5,10 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.navbar'); // 選取頁首元素
     const logo = document.querySelector('#header-logo'); // 選取 logo 圖片元素
 
-// 確認元素是否正確選擇
-console.log(header);
-console.log(logo);
-
 (function ($) {
     "use strict";
   
